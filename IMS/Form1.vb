@@ -3,13 +3,13 @@
 Public Class Form1
     Dim connection As New SqlConnection("Data Source=THEG\SQLEXPRESS;Initial Catalog=PROJECT;Integrated Security=True;Persist Security Info=False;Multiple Active Result Sets=True;Trust Server Certificate=True;User Instance=False")
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles btnsignup.Click
         Dim signinForm As New Form2()
         signinForm.Show()
         Me.Hide()
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnlogin.Click
         Dim username As String = textboxuserid.Text
         Dim password As String = textboxpassword.Text
 
@@ -18,7 +18,8 @@ Public Class Form1
             Return 'exit garcha
         End If
 
-        Dim command As New SqlCommand("SELECT COUNT(*) FROM tblsignup WHERE Adminusername = @username AND Password = @password", connection)
+        Dim command As New SqlCommand("SELECT COUNT(*) FROM tbllogindetails WHERE username = @username COLLATE Latin1_General_BIN AND Password = @password COLLATE Latin1_General_BIN", connection)
+        'LATIN1 FOR CS=CASESENSITIVE AND BIN for numbersensitive
         command.Parameters.AddWithValue("@username", username)
         command.Parameters.AddWithValue("@password", password)
         Try
@@ -41,5 +42,9 @@ Public Class Form1
             connection.Close()
 
         End Try
+    End Sub
+
+    Private Sub Guna2CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles Guna2CheckBox1.CheckedChanged
+
     End Sub
 End Class
