@@ -22,22 +22,16 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        TextBoxusername = New Guna.UI2.WinForms.Guna2TextBox()
-        TextBoxConfirmpassword = New Guna.UI2.WinForms.Guna2TextBox()
-        TextBoxpassword = New Guna.UI2.WinForms.Guna2TextBox()
         btnsignup = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        TextBoxusername = New TextBox()
+        TextBoxpassword = New TextBox()
+        TextBoxConfirmpassword = New TextBox()
         SuspendLayout()
         ' 
         ' Guna2HtmlLabel1
@@ -49,72 +43,9 @@ Partial Class Form2
         Guna2HtmlLabel1.TabIndex = 1
         Guna2HtmlLabel1.Text = Nothing
         ' 
-        ' TextBoxusername
-        ' 
-        TextBoxusername.CustomizableEdges = CustomizableEdges11
-        TextBoxusername.DefaultText = ""
-        TextBoxusername.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        TextBoxusername.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        TextBoxusername.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        TextBoxusername.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        TextBoxusername.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        TextBoxusername.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        TextBoxusername.ForeColor = Color.Black
-        TextBoxusername.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        TextBoxusername.Location = New Point(112, 239)
-        TextBoxusername.Name = "TextBoxusername"
-        TextBoxusername.PasswordChar = ChrW(0)
-        TextBoxusername.PlaceholderText = "Username"
-        TextBoxusername.SelectedText = ""
-        TextBoxusername.ShadowDecoration.CustomizableEdges = CustomizableEdges12
-        TextBoxusername.Size = New Size(265, 45)
-        TextBoxusername.TabIndex = 4
-        ' 
-        ' TextBoxConfirmpassword
-        ' 
-        TextBoxConfirmpassword.CustomizableEdges = CustomizableEdges13
-        TextBoxConfirmpassword.DefaultText = ""
-        TextBoxConfirmpassword.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        TextBoxConfirmpassword.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        TextBoxConfirmpassword.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        TextBoxConfirmpassword.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        TextBoxConfirmpassword.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        TextBoxConfirmpassword.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        TextBoxConfirmpassword.ForeColor = Color.Black
-        TextBoxConfirmpassword.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        TextBoxConfirmpassword.Location = New Point(112, 341)
-        TextBoxConfirmpassword.Name = "TextBoxConfirmpassword"
-        TextBoxConfirmpassword.PasswordChar = "*"c
-        TextBoxConfirmpassword.PlaceholderText = "Confirm Password"
-        TextBoxConfirmpassword.SelectedText = ""
-        TextBoxConfirmpassword.ShadowDecoration.CustomizableEdges = CustomizableEdges14
-        TextBoxConfirmpassword.Size = New Size(265, 45)
-        TextBoxConfirmpassword.TabIndex = 5
-        ' 
-        ' TextBoxpassword
-        ' 
-        TextBoxpassword.CustomizableEdges = CustomizableEdges15
-        TextBoxpassword.DefaultText = ""
-        TextBoxpassword.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        TextBoxpassword.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        TextBoxpassword.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        TextBoxpassword.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        TextBoxpassword.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        TextBoxpassword.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        TextBoxpassword.ForeColor = Color.Black
-        TextBoxpassword.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        TextBoxpassword.Location = New Point(112, 290)
-        TextBoxpassword.Name = "TextBoxpassword"
-        TextBoxpassword.PasswordChar = "*"c
-        TextBoxpassword.PlaceholderText = "Password"
-        TextBoxpassword.SelectedText = ""
-        TextBoxpassword.ShadowDecoration.CustomizableEdges = CustomizableEdges16
-        TextBoxpassword.Size = New Size(265, 45)
-        TextBoxpassword.TabIndex = 6
-        ' 
         ' btnsignup
         ' 
-        btnsignup.CustomizableEdges = CustomizableEdges17
+        btnsignup.CustomizableEdges = CustomizableEdges1
         btnsignup.DisabledState.BorderColor = Color.DarkGray
         btnsignup.DisabledState.CustomBorderColor = Color.DarkGray
         btnsignup.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -124,7 +55,7 @@ Partial Class Form2
         btnsignup.ForeColor = Color.White
         btnsignup.Location = New Point(112, 407)
         btnsignup.Name = "btnsignup"
-        btnsignup.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        btnsignup.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         btnsignup.Size = New Size(265, 39)
         btnsignup.TabIndex = 7
         btnsignup.Text = "SIGN UP"
@@ -132,7 +63,7 @@ Partial Class Form2
         ' Guna2Button2
         ' 
         Guna2Button2.CustomBorderThickness = New Padding(2)
-        Guna2Button2.CustomizableEdges = CustomizableEdges19
+        Guna2Button2.CustomizableEdges = CustomizableEdges3
         Guna2Button2.DisabledState.BorderColor = Color.DarkGray
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -142,21 +73,51 @@ Partial Class Form2
         Guna2Button2.ForeColor = Color.DimGray
         Guna2Button2.Location = New Point(112, 452)
         Guna2Button2.Name = "Guna2Button2"
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         Guna2Button2.Size = New Size(265, 53)
         Guna2Button2.TabIndex = 8
         Guna2Button2.Text = "Go back to login"
+        ' 
+        ' TextBoxusername
+        ' 
+        TextBoxusername.Font = New Font("Segoe UI Light", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        TextBoxusername.Location = New Point(112, 193)
+        TextBoxusername.Multiline = True
+        TextBoxusername.Name = "TextBoxusername"
+        TextBoxusername.PlaceholderText = "Username"
+        TextBoxusername.Size = New Size(265, 40)
+        TextBoxusername.TabIndex = 10
+        ' 
+        ' TextBoxpassword
+        ' 
+        TextBoxpassword.Font = New Font("Segoe UI Light", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        TextBoxpassword.Location = New Point(112, 239)
+        TextBoxpassword.Multiline = True
+        TextBoxpassword.Name = "TextBoxpassword"
+        TextBoxpassword.PlaceholderText = "Password"
+        TextBoxpassword.Size = New Size(265, 40)
+        TextBoxpassword.TabIndex = 11
+        ' 
+        ' TextBoxConfirmpassword
+        ' 
+        TextBoxConfirmpassword.Font = New Font("Segoe UI Light", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        TextBoxConfirmpassword.Location = New Point(112, 285)
+        TextBoxConfirmpassword.Multiline = True
+        TextBoxConfirmpassword.Name = "TextBoxConfirmpassword"
+        TextBoxConfirmpassword.PlaceholderText = "Confirm Password"
+        TextBoxConfirmpassword.Size = New Size(265, 40)
+        TextBoxConfirmpassword.TabIndex = 12
         ' 
         ' Form2
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(482, 648)
+        Controls.Add(TextBoxConfirmpassword)
+        Controls.Add(TextBoxpassword)
+        Controls.Add(TextBoxusername)
         Controls.Add(Guna2Button2)
         Controls.Add(btnsignup)
-        Controls.Add(TextBoxpassword)
-        Controls.Add(TextBoxConfirmpassword)
-        Controls.Add(TextBoxusername)
         Controls.Add(Guna2HtmlLabel1)
         FormBorderStyle = FormBorderStyle.FixedSingle
         MaximizeBox = False
@@ -169,9 +130,9 @@ Partial Class Form2
         PerformLayout()
     End Sub
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents TextBoxusername As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents TextBoxConfirmpassword As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents TextBoxpassword As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents btnsignup As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents TextBoxusername As TextBox
+    Friend WithEvents TextBoxpassword As TextBox
+    Friend WithEvents TextBoxConfirmpassword As TextBox
 End Class

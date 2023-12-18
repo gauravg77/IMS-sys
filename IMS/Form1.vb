@@ -1,4 +1,5 @@
-﻿Imports Microsoft.Data.SqlClient
+﻿Imports Guna.UI2.WinForms
+Imports Microsoft.Data.SqlClient
 
 Public Class Form1
     Dim connection As New SqlConnection("Data Source=THEG\SQLEXPRESS;Initial Catalog=PROJECT;Integrated Security=True;Persist Security Info=False;Multiple Active Result Sets=True;Trust Server Certificate=True;User Instance=False")
@@ -45,6 +46,20 @@ Public Class Form1
     End Sub
 
     Private Sub Guna2CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles Guna2CheckBox1.CheckedChanged
+
+        If Guna2CheckBox1.Checked = True Then
+            textboxpassword.UseSystemPasswordChar = False
+        Else
+            textboxpassword.UseSystemPasswordChar = True
+            'End If
+            'If Guna2CheckBox1.Checked = False Then
+            '  textboxpassword.UseSystemPasswordChar = True
+            'Else
+            '    textboxpassword.UseSystemPasswordChar = False
+        End If
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles textboxuserid.TextChanged
 
     End Sub
 End Class
