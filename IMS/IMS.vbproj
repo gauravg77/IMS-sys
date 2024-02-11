@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <StartupObject>IMS.Form1</StartupObject>
+    <StartupObject>IMS.Login</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>

@@ -79,9 +79,6 @@ C:\Users\pokha\Source\Repos\IMS-sys\IMS\bin\Debug\net6.0-windows\runtimes\win-x8
 C:\Users\pokha\Source\Repos\IMS-sys\IMS\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Management.dll
 C:\Users\pokha\Source\Repos\IMS-sys\IMS\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.vbproj.AssemblyReference.cache
-C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.Form1.resources
-C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.Form2.resources
-C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.Form3.resources
 C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.Resources.resources
 C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.vbproj.GenerateResource.cache
 C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.GeneratedMSBuildEditorConfig.editorconfig
@@ -94,3 +91,6 @@ C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\refint\IMS.dll
 C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.pdb
 C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.genruntimeconfig.cache
 C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\ref\IMS.dll
+C:\Users\pokha\source\repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.Login.resources
+C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.Signup.resources
+C:\Users\pokha\Source\Repos\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.Product.resources

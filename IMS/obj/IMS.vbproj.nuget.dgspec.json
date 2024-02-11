@@ -11,7 +11,7 @@
         "projectName": "IMS",
         "projectPath": "C:\\Users\\pokha\\Source\\Repos\\IMS-sys\\IMS\\IMS.vbproj",
         "packagesPath": "C:\\Users\\pokha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pokha\\Source\\Repos\\IMS-sys\\IMS\\obj\\",
+        "outputPath": "C:\\Users\\pokha\\source\\repos\\IMS-sys\\IMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pokha\\AppData\\Roaming\\NuGet\\NuGet.Config",

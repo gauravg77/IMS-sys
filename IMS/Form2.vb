@@ -1,8 +1,8 @@
 ﻿Imports System.Windows.Input
 Imports Microsoft.Data.SqlClient
 
-Public Class Form2
-    Dim loginForm As New Form1()
+Public Class Signup
+    Dim loginForm As New Login()
     Dim connection As New SqlConnection("Data Source=THEG\SQLEXPRESS;Initial Catalog=PROJECT;Integrated Security=True;Persist Security Info=False;Multiple Active Result Sets=True;Trust Server Certificate=True;User Instance=False")
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnsignup.Click
 
@@ -17,11 +17,11 @@ Public Class Form2
             Return
         End If
         If TextBoxConfirmpassword.Text = TextBoxpassword.Text Then
-            Dim command As New SqlCommand("insert into tbllogindetails(username,Password)values ('" & TextBoxusername.Text & "','" & TextBoxpassword.Text & "')", connection) 'sqlcommand lai duita parameter chaincha, one is query ani another is the variable for sql connection
+            Dim command As New SqlCommand("insert into tbllogindetails(username,Password)values ('" & username & "','" & password & "')", connection) 'sqlcommand lai duita parameter chaincha, one is query ani another is the variable for sql connection
 
             Try
                 connection.Open()
-                If command.ExecuteNonQuery() = 1 Then
+                If command.ExecuteNonQuery() = 1 Then 'it doesnt return value but the integer value of how many rows effected
                     MessageBox.Show("Signed up successfully")
 
                     loginForm.Show()
@@ -45,7 +45,11 @@ Public Class Form2
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
         'to navigate control towards loginform
-        Form1.Show()
+        Login.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

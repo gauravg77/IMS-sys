@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form2
+Partial Class Signup
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,10 +22,10 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         btnsignup = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
@@ -45,7 +45,8 @@ Partial Class Form2
         ' 
         ' btnsignup
         ' 
-        btnsignup.CustomizableEdges = CustomizableEdges1
+        btnsignup.AccessibleName = ""
+        btnsignup.CustomizableEdges = CustomizableEdges5
         btnsignup.DisabledState.BorderColor = Color.DarkGray
         btnsignup.DisabledState.CustomBorderColor = Color.DarkGray
         btnsignup.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -55,7 +56,7 @@ Partial Class Form2
         btnsignup.ForeColor = Color.White
         btnsignup.Location = New Point(112, 407)
         btnsignup.Name = "btnsignup"
-        btnsignup.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        btnsignup.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         btnsignup.Size = New Size(265, 39)
         btnsignup.TabIndex = 7
         btnsignup.Text = "SIGN UP"
@@ -63,7 +64,7 @@ Partial Class Form2
         ' Guna2Button2
         ' 
         Guna2Button2.CustomBorderThickness = New Padding(2)
-        Guna2Button2.CustomizableEdges = CustomizableEdges3
+        Guna2Button2.CustomizableEdges = CustomizableEdges7
         Guna2Button2.DisabledState.BorderColor = Color.DarkGray
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -73,7 +74,7 @@ Partial Class Form2
         Guna2Button2.ForeColor = Color.DimGray
         Guna2Button2.Location = New Point(112, 452)
         Guna2Button2.Name = "Guna2Button2"
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Guna2Button2.Size = New Size(265, 53)
         Guna2Button2.TabIndex = 8
         Guna2Button2.Text = "Go back to login"
@@ -94,9 +95,11 @@ Partial Class Form2
         TextBoxpassword.Location = New Point(112, 239)
         TextBoxpassword.Multiline = True
         TextBoxpassword.Name = "TextBoxpassword"
+        TextBoxpassword.PasswordChar = "*"c
         TextBoxpassword.PlaceholderText = "Password"
         TextBoxpassword.Size = New Size(265, 40)
         TextBoxpassword.TabIndex = 11
+        TextBoxpassword.UseSystemPasswordChar = True
         ' 
         ' TextBoxConfirmpassword
         ' 
@@ -104,12 +107,15 @@ Partial Class Form2
         TextBoxConfirmpassword.Location = New Point(112, 285)
         TextBoxConfirmpassword.Multiline = True
         TextBoxConfirmpassword.Name = "TextBoxConfirmpassword"
+        TextBoxConfirmpassword.PasswordChar = "*"c
         TextBoxConfirmpassword.PlaceholderText = "Confirm Password"
         TextBoxConfirmpassword.Size = New Size(265, 40)
         TextBoxConfirmpassword.TabIndex = 12
+        TextBoxConfirmpassword.UseSystemPasswordChar = True
         ' 
-        ' Form2
+        ' Signup
         ' 
+        AccessibleName = "Signup"
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(482, 648)
@@ -122,10 +128,10 @@ Partial Class Form2
         FormBorderStyle = FormBorderStyle.FixedSingle
         MaximizeBox = False
         MinimizeBox = False
-        Name = "Form2"
+        Name = "Signup"
         SizeGripStyle = SizeGripStyle.Show
         StartPosition = FormStartPosition.CenterScreen
-        Text = "Form2"
+        Text = "Signup"
         ResumeLayout(False)
         PerformLayout()
     End Sub
