@@ -19,7 +19,7 @@ Public Class Login
             Return 'exit garcha
         End If
 
-        Dim command As New SqlCommand("SELECT COUNT(*) FROM tbllogindetails WHERE username = @username COLLATE Latin1_General_BIN AND Password = @password COLLATE Latin1_General_BIN", connection)
+        Dim command As New SqlCommand("SELECT COUNT(*) FROM tbllogindetails WHERE username = @username ", connection)
         'LATIN1 FOR CS=CASESENSITIVE AND BIN for numbersensitive
         command.Parameters.AddWithValue("@username", username)
         command.Parameters.AddWithValue("@password", password)
@@ -57,9 +57,5 @@ Public Class Login
             'Else
             '    textboxpassword.UseSystemPasswordChar = False
         End If
-    End Sub
-
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 End Class

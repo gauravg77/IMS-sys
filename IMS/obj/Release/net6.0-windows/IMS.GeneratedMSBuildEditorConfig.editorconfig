@@ -1,6 +1,6 @@
 is_global = true
 build_property.ApplicationManifest = 
-build_property.StartupObject = IMS.Form2
+build_property.StartupObject = IMS.Login
 build_property.ApplicationDefaultFont = 
 build_property.ApplicationHighDpiMode = 
 build_property.ApplicationUseCompatibleTextRendering = 
@@ -14,4 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = IMS
-build_property.ProjectDir = D:\Visual  Studio Work\IMS\
+build_property.ProjectDir = C:\Users\pokha\Source\Repos\gauravg77\IMS-sys\IMS\

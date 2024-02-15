@@ -50,14 +50,19 @@ Partial Class Product
         txtcostprice = New TextBox()
         btncategorysearch = New Button()
         btnproductsearch = New Button()
+        gridproduct = New DataGridView()
+        gridcategory = New DataGridView()
+        btnrefreshproduct = New Button()
+        btnrefreshcategory = New Button()
+        CType(gridproduct, ComponentModel.ISupportInitialize).BeginInit()
+        CType(gridcategory, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Category
         ' 
         Category.AccessibleName = "Category"
-        Category.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Category.AutoSize = True
-        Category.Location = New Point(43, 104)
+        Category.Location = New Point(173, 76)
         Category.Name = "Category"
         Category.Size = New Size(117, 20)
         Category.TabIndex = 0
@@ -66,9 +71,8 @@ Partial Class Product
         ' 
         ' Label1
         ' 
-        Label1.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label1.AutoSize = True
-        Label1.Location = New Point(43, 153)
+        Label1.Location = New Point(57, 134)
         Label1.Name = "Label1"
         Label1.Size = New Size(92, 20)
         Label1.TabIndex = 1
@@ -77,9 +81,8 @@ Partial Class Product
         ' 
         ' Label2
         ' 
-        Label2.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label2.AutoSize = True
-        Label2.Location = New Point(43, 183)
+        Label2.Location = New Point(57, 169)
         Label2.Name = "Label2"
         Label2.Size = New Size(113, 20)
         Label2.TabIndex = 2
@@ -88,9 +91,8 @@ Partial Class Product
         ' 
         ' Label3
         ' 
-        Label3.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label3.AutoSize = True
-        Label3.Location = New Point(482, 104)
+        Label3.Location = New Point(966, 76)
         Label3.Name = "Label3"
         Label3.Size = New Size(181, 20)
         Label3.TabIndex = 3
@@ -99,9 +101,8 @@ Partial Class Product
         ' 
         ' Label4
         ' 
-        Label4.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label4.AutoSize = True
-        Label4.Location = New Point(493, 136)
+        Label4.Location = New Point(864, 136)
         Label4.Name = "Label4"
         Label4.Size = New Size(79, 20)
         Label4.TabIndex = 4
@@ -110,9 +111,8 @@ Partial Class Product
         ' 
         ' Label5
         ' 
-        Label5.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label5.AutoSize = True
-        Label5.Location = New Point(482, 220)
+        Label5.Location = New Point(864, 203)
         Label5.Name = "Label5"
         Label5.Size = New Size(69, 20)
         Label5.TabIndex = 5
@@ -121,9 +121,8 @@ Partial Class Product
         ' 
         ' Label6
         ' 
-        Label6.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label6.AutoSize = True
-        Label6.Location = New Point(482, 179)
+        Label6.Location = New Point(864, 169)
         Label6.Name = "Label6"
         Label6.Size = New Size(104, 20)
         Label6.TabIndex = 6
@@ -132,9 +131,8 @@ Partial Class Product
         ' 
         ' Label7
         ' 
-        Label7.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label7.AutoSize = True
-        Label7.Location = New Point(482, 258)
+        Label7.Location = New Point(864, 236)
         Label7.Name = "Label7"
         Label7.Size = New Size(65, 20)
         Label7.TabIndex = 7
@@ -143,9 +141,8 @@ Partial Class Product
         ' 
         ' Label8
         ' 
-        Label8.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label8.AutoSize = True
-        Label8.Location = New Point(482, 301)
+        Label8.Location = New Point(864, 269)
         Label8.Name = "Label8"
         Label8.Size = New Size(90, 20)
         Label8.TabIndex = 8
@@ -154,9 +151,8 @@ Partial Class Product
         ' 
         ' Label9
         ' 
-        Label9.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         Label9.AutoSize = True
-        Label9.Location = New Point(482, 337)
+        Label9.Location = New Point(864, 302)
         Label9.Name = "Label9"
         Label9.Size = New Size(74, 20)
         Label9.TabIndex = 9
@@ -166,8 +162,7 @@ Partial Class Product
         ' btnaddcategory
         ' 
         btnaddcategory.AccessibleName = "btnaddcategory"
-        btnaddcategory.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        btnaddcategory.Location = New Point(29, 366)
+        btnaddcategory.Location = New Point(57, 366)
         btnaddcategory.Name = "btnaddcategory"
         btnaddcategory.Size = New Size(94, 29)
         btnaddcategory.TabIndex = 10
@@ -177,8 +172,7 @@ Partial Class Product
         ' bthclearcategory
         ' 
         bthclearcategory.AccessibleName = "bthclearcategory"
-        bthclearcategory.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        bthclearcategory.Location = New Point(141, 416)
+        bthclearcategory.Location = New Point(483, 158)
         bthclearcategory.Name = "bthclearcategory"
         bthclearcategory.Size = New Size(94, 29)
         bthclearcategory.TabIndex = 11
@@ -188,8 +182,7 @@ Partial Class Product
         ' btndeletecategory
         ' 
         btndeletecategory.AccessibleName = "btndeletecategory"
-        btndeletecategory.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        btndeletecategory.Location = New Point(29, 416)
+        btndeletecategory.Location = New Point(291, 366)
         btndeletecategory.Name = "btndeletecategory"
         btndeletecategory.Size = New Size(94, 29)
         btndeletecategory.TabIndex = 12
@@ -199,8 +192,7 @@ Partial Class Product
         ' btnupdatecategory
         ' 
         btnupdatecategory.AccessibleName = "btnupdatecategory"
-        btnupdatecategory.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        btnupdatecategory.Location = New Point(141, 366)
+        btnupdatecategory.Location = New Point(173, 366)
         btnupdatecategory.Name = "btnupdatecategory"
         btnupdatecategory.Size = New Size(94, 29)
         btnupdatecategory.TabIndex = 13
@@ -210,8 +202,7 @@ Partial Class Product
         ' btnaddproduct
         ' 
         btnaddproduct.AccessibleName = "btnaddproduct"
-        btnaddproduct.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        btnaddproduct.Location = New Point(467, 366)
+        btnaddproduct.Location = New Point(844, 366)
         btnaddproduct.Name = "btnaddproduct"
         btnaddproduct.Size = New Size(94, 29)
         btnaddproduct.TabIndex = 14
@@ -221,8 +212,7 @@ Partial Class Product
         ' btnupdateproduct
         ' 
         btnupdateproduct.AccessibleName = "btnupdateproduct"
-        btnupdateproduct.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        btnupdateproduct.Location = New Point(592, 366)
+        btnupdateproduct.Location = New Point(966, 366)
         btnupdateproduct.Name = "btnupdateproduct"
         btnupdateproduct.Size = New Size(94, 29)
         btnupdateproduct.TabIndex = 15
@@ -232,8 +222,7 @@ Partial Class Product
         ' btndeleteproduct
         ' 
         btndeleteproduct.AccessibleName = "btndeleteproduct"
-        btndeleteproduct.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        btndeleteproduct.Location = New Point(701, 366)
+        btndeleteproduct.Location = New Point(1091, 366)
         btndeleteproduct.Name = "btndeleteproduct"
         btndeleteproduct.Size = New Size(94, 29)
         btndeleteproduct.TabIndex = 16
@@ -243,8 +232,7 @@ Partial Class Product
         ' btnclearproduct
         ' 
         btnclearproduct.AccessibleName = "btnclearproduct"
-        btnclearproduct.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        btnclearproduct.Location = New Point(813, 366)
+        btnclearproduct.Location = New Point(1308, 158)
         btnclearproduct.Name = "btnclearproduct"
         btnclearproduct.Size = New Size(94, 29)
         btnclearproduct.TabIndex = 17
@@ -254,81 +242,73 @@ Partial Class Product
         ' txtcategoryid
         ' 
         txtcategoryid.AccessibleName = "txtcategoryid"
-        txtcategoryid.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        txtcategoryid.Location = New Point(162, 150)
+        txtcategoryid.Location = New Point(271, 125)
         txtcategoryid.Name = "txtcategoryid"
-        txtcategoryid.Size = New Size(125, 27)
+        txtcategoryid.Size = New Size(178, 27)
         txtcategoryid.TabIndex = 18
         ' 
         ' txtcategoryname
         ' 
         txtcategoryname.AccessibleName = "txtcategoryname"
-        txtcategoryname.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        txtcategoryname.Location = New Point(162, 183)
+        txtcategoryname.Location = New Point(271, 160)
         txtcategoryname.Name = "txtcategoryname"
-        txtcategoryname.Size = New Size(125, 27)
+        txtcategoryname.Size = New Size(178, 27)
         txtcategoryname.TabIndex = 19
         ' 
         ' txtsellingprice
         ' 
         txtsellingprice.AccessibleName = "txtsellingprice"
-        txtsellingprice.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        txtsellingprice.Location = New Point(592, 294)
+        txtsellingprice.Location = New Point(1091, 262)
         txtsellingprice.Name = "txtsellingprice"
-        txtsellingprice.Size = New Size(125, 27)
+        txtsellingprice.Size = New Size(178, 27)
         txtsellingprice.TabIndex = 20
         ' 
         ' txtquantity
         ' 
         txtquantity.AccessibleName = "txtquantity"
-        txtquantity.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        txtquantity.Location = New Point(592, 251)
+        txtquantity.Location = New Point(1091, 229)
         txtquantity.Name = "txtquantity"
-        txtquantity.Size = New Size(125, 27)
+        txtquantity.Size = New Size(178, 27)
         txtquantity.TabIndex = 21
         ' 
         ' txtproductid
         ' 
         txtproductid.AccessibleName = "txtproductid"
-        txtproductid.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        txtproductid.Location = New Point(592, 136)
+        txtproductid.Location = New Point(1091, 129)
         txtproductid.Name = "txtproductid"
-        txtproductid.Size = New Size(125, 27)
+        txtproductid.Size = New Size(178, 27)
         txtproductid.TabIndex = 22
         ' 
         ' txtproductname
         ' 
         txtproductname.AccessibleName = "txtproductname"
-        txtproductname.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        txtproductname.Location = New Point(592, 176)
+        txtproductname.Location = New Point(1091, 162)
         txtproductname.Name = "txtproductname"
-        txtproductname.Size = New Size(125, 27)
+        txtproductname.Size = New Size(178, 27)
         txtproductname.TabIndex = 23
         ' 
         ' comboboxcategory
         ' 
         comboboxcategory.AccessibleDescription = ""
         comboboxcategory.AccessibleName = " comboboxcategory"
-        comboboxcategory.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         comboboxcategory.FormattingEnabled = True
-        comboboxcategory.Location = New Point(592, 212)
+        comboboxcategory.Location = New Point(1091, 195)
         comboboxcategory.Name = "comboboxcategory"
-        comboboxcategory.Size = New Size(125, 28)
+        comboboxcategory.Size = New Size(178, 28)
         comboboxcategory.TabIndex = 24
         ' 
         ' txtcostprice
         ' 
         txtcostprice.AccessibleName = "txtcostprice"
-        txtcostprice.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
-        txtcostprice.Location = New Point(592, 327)
+        txtcostprice.Location = New Point(1091, 295)
         txtcostprice.Name = "txtcostprice"
-        txtcostprice.Size = New Size(125, 27)
+        txtcostprice.Size = New Size(178, 27)
         txtcostprice.TabIndex = 25
         ' 
         ' btncategorysearch
         ' 
         btncategorysearch.AccessibleName = "btncategorysearch"
-        btncategorysearch.Location = New Point(313, 150)
+        btncategorysearch.Location = New Point(483, 123)
         btncategorysearch.Name = "btncategorysearch"
         btncategorysearch.Size = New Size(94, 29)
         btncategorysearch.TabIndex = 26
@@ -338,12 +318,54 @@ Partial Class Product
         ' btnproductsearch
         ' 
         btnproductsearch.AccessibleName = "btnproductsearch"
-        btnproductsearch.Location = New Point(745, 144)
+        btnproductsearch.Location = New Point(1308, 123)
         btnproductsearch.Name = "btnproductsearch"
         btnproductsearch.Size = New Size(94, 29)
         btnproductsearch.TabIndex = 27
         btnproductsearch.Text = "Search"
         btnproductsearch.UseVisualStyleBackColor = True
+        ' 
+        ' gridproduct
+        ' 
+        gridproduct.AccessibleName = "gridproduct"
+        gridproduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        gridproduct.Location = New Point(844, 429)
+        gridproduct.Name = "gridproduct"
+        gridproduct.RowHeadersWidth = 51
+        gridproduct.RowTemplate.Height = 29
+        gridproduct.Size = New Size(866, 411)
+        gridproduct.TabIndex = 29
+        ' 
+        ' gridcategory
+        ' 
+        gridcategory.AccessibleName = "gridcategory"
+        gridcategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        gridcategory.Location = New Point(57, 438)
+        gridcategory.Name = "gridcategory"
+        gridcategory.RowHeadersWidth = 51
+        gridcategory.RowTemplate.Height = 29
+        gridcategory.Size = New Size(447, 411)
+        gridcategory.TabIndex = 30
+        ' 
+        ' btnrefreshproduct
+        ' 
+        btnrefreshproduct.AccessibleName = "btnrefreshproduct"
+        btnrefreshproduct.Location = New Point(1207, 366)
+        btnrefreshproduct.Name = "btnrefreshproduct"
+        btnrefreshproduct.Size = New Size(94, 29)
+        btnrefreshproduct.TabIndex = 31
+        btnrefreshproduct.Text = "RELOAD"
+        btnrefreshproduct.UseVisualStyleBackColor = True
+        ' 
+        ' btnrefreshcategory
+        ' 
+        btnrefreshcategory.AccessibleName = "btnrefreshcategory"
+        btnrefreshcategory.Location = New Point(410, 366)
+        btnrefreshcategory.Name = "btnrefreshcategory"
+        btnrefreshcategory.Size = New Size(94, 29)
+        btnrefreshcategory.TabIndex = 32
+        btnrefreshcategory.Text = "RELOAD"
+        btnrefreshcategory.UseVisualStyleBackColor = True
         ' 
         ' Product
         ' 
@@ -351,7 +373,11 @@ Partial Class Product
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
-        ClientSize = New Size(1021, 709)
+        ClientSize = New Size(1766, 1003)
+        Controls.Add(btnrefreshcategory)
+        Controls.Add(btnrefreshproduct)
+        Controls.Add(gridcategory)
+        Controls.Add(gridproduct)
         Controls.Add(btnproductsearch)
         Controls.Add(btncategorysearch)
         Controls.Add(txtcostprice)
@@ -381,8 +407,11 @@ Partial Class Product
         Controls.Add(Label1)
         Controls.Add(Category)
         Name = "Product"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Product"
         WindowState = FormWindowState.Maximized
+        CType(gridproduct, ComponentModel.ISupportInitialize).EndInit()
+        CType(gridcategory, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -415,4 +444,8 @@ Partial Class Product
     Friend WithEvents txtcostprice As TextBox
     Friend WithEvents btncategorysearch As Button
     Friend WithEvents btnproductsearch As Button
+    Friend WithEvents gridproduct As DataGridView
+    Friend WithEvents gridcategory As DataGridView
+    Friend WithEvents btnrefreshproduct As Button
+    Friend WithEvents btnrefreshcategory As Button
 End Class

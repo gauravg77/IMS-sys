@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pokha\\Source\\Repos\\IMS-sys\\IMS\\IMS.vbproj": {}
+    "C:\\Users\\pokha\\Source\\Repos\\gauravg77\\IMS-sys\\IMS\\IMS.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\pokha\\Source\\Repos\\IMS-sys\\IMS\\IMS.vbproj": {
+    "C:\\Users\\pokha\\Source\\Repos\\gauravg77\\IMS-sys\\IMS\\IMS.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pokha\\Source\\Repos\\IMS-sys\\IMS\\IMS.vbproj",
+        "projectUniqueName": "C:\\Users\\pokha\\Source\\Repos\\gauravg77\\IMS-sys\\IMS\\IMS.vbproj",
         "projectName": "IMS",
-        "projectPath": "C:\\Users\\pokha\\Source\\Repos\\IMS-sys\\IMS\\IMS.vbproj",
+        "projectPath": "C:\\Users\\pokha\\Source\\Repos\\gauravg77\\IMS-sys\\IMS\\IMS.vbproj",
         "packagesPath": "C:\\Users\\pokha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pokha\\source\\repos\\IMS-sys\\IMS\\obj\\",
+        "outputPath": "C:\\Users\\pokha\\Source\\Repos\\gauravg77\\IMS-sys\\IMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pokha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,7 +46,7 @@
             },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
-              "version": "[5.1.2, )"
+              "version": "[5.1.5, )"
             }
           },
           "imports": [
