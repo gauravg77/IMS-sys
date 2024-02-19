@@ -22,7 +22,6 @@ Partial Class Product
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Category = New Label()
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -54,20 +53,12 @@ Partial Class Product
         gridcategory = New DataGridView()
         btnrefreshproduct = New Button()
         btnrefreshcategory = New Button()
+        SqlCommand1 = New Microsoft.Data.SqlClient.SqlCommand()
+        GroupBox1 = New GroupBox()
+        GroupBox2 = New GroupBox()
         CType(gridproduct, ComponentModel.ISupportInitialize).BeginInit()
         CType(gridcategory, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' Category
-        ' 
-        Category.AccessibleName = "Category"
-        Category.AutoSize = True
-        Category.Location = New Point(173, 76)
-        Category.Name = "Category"
-        Category.Size = New Size(117, 20)
-        Category.TabIndex = 0
-        Category.Text = "ADD CATEGORY"
-        Category.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label1
         ' 
@@ -94,15 +85,14 @@ Partial Class Product
         Label3.AutoSize = True
         Label3.Location = New Point(966, 76)
         Label3.Name = "Label3"
-        Label3.Size = New Size(181, 20)
+        Label3.Size = New Size(0, 20)
         Label3.TabIndex = 3
-        Label3.Text = "PRODUCT MANAGEMENT"
         Label3.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(864, 136)
+        Label4.Location = New Point(859, 136)
         Label4.Name = "Label4"
         Label4.Size = New Size(79, 20)
         Label4.TabIndex = 4
@@ -122,7 +112,7 @@ Partial Class Product
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(864, 169)
+        Label6.Location = New Point(856, 169)
         Label6.Name = "Label6"
         Label6.Size = New Size(104, 20)
         Label6.TabIndex = 6
@@ -172,12 +162,13 @@ Partial Class Product
         ' bthclearcategory
         ' 
         bthclearcategory.AccessibleName = "bthclearcategory"
+        bthclearcategory.BackColor = SystemColors.Control
         bthclearcategory.Location = New Point(483, 158)
         bthclearcategory.Name = "bthclearcategory"
         bthclearcategory.Size = New Size(94, 29)
         bthclearcategory.TabIndex = 11
         bthclearcategory.Text = "CLEAR"
-        bthclearcategory.UseVisualStyleBackColor = True
+        bthclearcategory.UseVisualStyleBackColor = False
         ' 
         ' btndeletecategory
         ' 
@@ -242,49 +233,61 @@ Partial Class Product
         ' txtcategoryid
         ' 
         txtcategoryid.AccessibleName = "txtcategoryid"
-        txtcategoryid.Location = New Point(271, 125)
+        txtcategoryid.Cursor = Cursors.IBeam
+        txtcategoryid.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtcategoryid.Location = New Point(173, 125)
         txtcategoryid.Name = "txtcategoryid"
-        txtcategoryid.Size = New Size(178, 27)
+        txtcategoryid.Size = New Size(276, 27)
         txtcategoryid.TabIndex = 18
         ' 
         ' txtcategoryname
         ' 
         txtcategoryname.AccessibleName = "txtcategoryname"
-        txtcategoryname.Location = New Point(271, 160)
+        txtcategoryname.Cursor = Cursors.IBeam
+        txtcategoryname.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtcategoryname.Location = New Point(173, 160)
         txtcategoryname.Name = "txtcategoryname"
-        txtcategoryname.Size = New Size(178, 27)
+        txtcategoryname.Size = New Size(276, 27)
         txtcategoryname.TabIndex = 19
         ' 
         ' txtsellingprice
         ' 
         txtsellingprice.AccessibleName = "txtsellingprice"
-        txtsellingprice.Location = New Point(1091, 262)
+        txtsellingprice.Cursor = Cursors.IBeam
+        txtsellingprice.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtsellingprice.Location = New Point(966, 262)
         txtsellingprice.Name = "txtsellingprice"
-        txtsellingprice.Size = New Size(178, 27)
+        txtsellingprice.Size = New Size(303, 27)
         txtsellingprice.TabIndex = 20
         ' 
         ' txtquantity
         ' 
         txtquantity.AccessibleName = "txtquantity"
-        txtquantity.Location = New Point(1091, 229)
+        txtquantity.Cursor = Cursors.IBeam
+        txtquantity.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtquantity.Location = New Point(966, 229)
         txtquantity.Name = "txtquantity"
-        txtquantity.Size = New Size(178, 27)
+        txtquantity.Size = New Size(303, 27)
         txtquantity.TabIndex = 21
         ' 
         ' txtproductid
         ' 
         txtproductid.AccessibleName = "txtproductid"
-        txtproductid.Location = New Point(1091, 129)
+        txtproductid.Cursor = Cursors.IBeam
+        txtproductid.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtproductid.Location = New Point(966, 129)
         txtproductid.Name = "txtproductid"
-        txtproductid.Size = New Size(178, 27)
+        txtproductid.Size = New Size(303, 27)
         txtproductid.TabIndex = 22
         ' 
         ' txtproductname
         ' 
         txtproductname.AccessibleName = "txtproductname"
-        txtproductname.Location = New Point(1091, 162)
+        txtproductname.Cursor = Cursors.IBeam
+        txtproductname.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtproductname.Location = New Point(966, 162)
         txtproductname.Name = "txtproductname"
-        txtproductname.Size = New Size(178, 27)
+        txtproductname.Size = New Size(303, 27)
         txtproductname.TabIndex = 23
         ' 
         ' comboboxcategory
@@ -292,28 +295,31 @@ Partial Class Product
         comboboxcategory.AccessibleDescription = ""
         comboboxcategory.AccessibleName = " comboboxcategory"
         comboboxcategory.FormattingEnabled = True
-        comboboxcategory.Location = New Point(1091, 195)
+        comboboxcategory.Location = New Point(966, 195)
         comboboxcategory.Name = "comboboxcategory"
-        comboboxcategory.Size = New Size(178, 28)
+        comboboxcategory.Size = New Size(303, 28)
         comboboxcategory.TabIndex = 24
         ' 
         ' txtcostprice
         ' 
         txtcostprice.AccessibleName = "txtcostprice"
-        txtcostprice.Location = New Point(1091, 295)
+        txtcostprice.Cursor = Cursors.IBeam
+        txtcostprice.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtcostprice.Location = New Point(966, 295)
         txtcostprice.Name = "txtcostprice"
-        txtcostprice.Size = New Size(178, 27)
+        txtcostprice.Size = New Size(303, 27)
         txtcostprice.TabIndex = 25
         ' 
         ' btncategorysearch
         ' 
         btncategorysearch.AccessibleName = "btncategorysearch"
+        btncategorysearch.BackColor = SystemColors.Control
         btncategorysearch.Location = New Point(483, 123)
         btncategorysearch.Name = "btncategorysearch"
         btncategorysearch.Size = New Size(94, 29)
         btncategorysearch.TabIndex = 26
         btncategorysearch.Text = "Search"
-        btncategorysearch.UseVisualStyleBackColor = True
+        btncategorysearch.UseVisualStyleBackColor = False
         ' 
         ' btnproductsearch
         ' 
@@ -329,22 +335,22 @@ Partial Class Product
         ' 
         gridproduct.AccessibleName = "gridproduct"
         gridproduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        gridproduct.Location = New Point(844, 429)
+        gridproduct.Location = New Point(810, 438)
         gridproduct.Name = "gridproduct"
         gridproduct.RowHeadersWidth = 51
         gridproduct.RowTemplate.Height = 29
-        gridproduct.Size = New Size(866, 411)
+        gridproduct.Size = New Size(866, 358)
         gridproduct.TabIndex = 29
         ' 
         ' gridcategory
         ' 
         gridcategory.AccessibleName = "gridcategory"
         gridcategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        gridcategory.Location = New Point(57, 438)
+        gridcategory.Location = New Point(27, 438)
         gridcategory.Name = "gridcategory"
         gridcategory.RowHeadersWidth = 51
         gridcategory.RowTemplate.Height = 29
-        gridcategory.Size = New Size(447, 411)
+        gridcategory.Size = New Size(570, 358)
         gridcategory.TabIndex = 30
         ' 
         ' btnrefreshproduct
@@ -366,6 +372,29 @@ Partial Class Product
         btnrefreshcategory.TabIndex = 32
         btnrefreshcategory.Text = "RELOAD"
         btnrefreshcategory.UseVisualStyleBackColor = True
+        ' 
+        ' SqlCommand1
+        ' 
+        SqlCommand1.CommandTimeout = 30
+        SqlCommand1.EnableOptimizedParameterBinding = False
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Location = New Point(27, 76)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(570, 342)
+        GroupBox1.TabIndex = 33
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "CATEGORY MANAGEMENT"
+        ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Location = New Point(810, 76)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(659, 342)
+        GroupBox2.TabIndex = 34
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "PRODUCT MANAGEMENT"
         ' 
         ' Product
         ' 
@@ -405,7 +434,8 @@ Partial Class Product
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Controls.Add(Category)
+        Controls.Add(GroupBox1)
+        Controls.Add(GroupBox2)
         Name = "Product"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Product"
@@ -415,8 +445,6 @@ Partial Class Product
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents Category As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -448,4 +476,7 @@ Partial Class Product
     Friend WithEvents gridcategory As DataGridView
     Friend WithEvents btnrefreshproduct As Button
     Friend WithEvents btnrefreshcategory As Button
+    Friend WithEvents SqlCommand1 As Microsoft.Data.SqlClient.SqlCommand
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
 End Class

@@ -153,3 +153,4 @@ C:\Users\pokha\Source\Repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\refin
 C:\Users\pokha\Source\Repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.pdb
 C:\Users\pokha\Source\Repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.genruntimeconfig.cache
 C:\Users\pokha\Source\Repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\ref\IMS.dll
+C:\Users\pokha\Source\Repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.Form1.resources

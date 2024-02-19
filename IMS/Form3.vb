@@ -85,6 +85,21 @@ Public Class Product
             Return
         End If
 
+        connection.Open()
+
+        ' Check if the category name already exists
+        Dim checkCommandText As String = "SELECT COUNT(*) FROM tblcategory WHERE categoryname = @categoryname"
+        Using checkCommand As New SqlCommand(checkCommandText, connection)
+            checkCommand.Parameters.AddWithValue("@categoryname", productcategory)
+            Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+            If count > 0 Then
+                MessageBox.Show("Category name already exists.")
+                Return
+            End If
+            connection.Close()
+        End Using
+
+
         Try
             connection.Open()
             Dim command As New SqlCommand("INSERT INTO tblcategory(categoryname) VALUES ('" & productcategory & "')", connection)
@@ -109,6 +124,11 @@ Public Class Product
     Private Sub btncategorysearch_Click(sender As Object, e As EventArgs) Handles btncategorysearch.Click
         Dim categoryid As String = txtcategoryid.Text
         Dim categoryname As String = txtcategoryname.Text
+
+        If String.IsNullOrEmpty(categoryid) AndAlso String.IsNullOrEmpty(categoryname) Then
+            MessageBox.Show("Please enter a category ID or category name.")
+            Return
+        End If
 
         Try
             connection.Open()
@@ -186,6 +206,11 @@ Public Class Product
     Private Sub btnproductsearch_Click(sender As Object, e As EventArgs) Handles btnproductsearch.Click
         Dim productid As String = txtproductid.Text
         Dim productname As String = txtproductname.Text
+
+        If String.IsNullOrEmpty(productid) AndAlso String.IsNullOrEmpty(productname) Then
+            MessageBox.Show("Please enter a product ID or product name.")
+            Return
+        End If
 
         Try
             connection.Open()
@@ -299,12 +324,31 @@ Public Class Product
 
     End Sub
 
-    'removing data and inserting it in the bin
+    'removing category and inserting it in the bin
     Private Sub btndeletecategory_Click(sender As Object, e As EventArgs) Handles btndeletecategory.Click
         Try
             Dim categoryid As String = txtcategoryid.Text
+            If String.IsNullOrWhiteSpace(categoryid) Then
+                MessageBox.Show("Please enter a category ID.")
+                Return
+            End If
+
             Using connection As New SqlConnection("Data Source=THEG\SQLEXPRESS;Initial Catalog=PROJECT;Integrated Security=True;Persist Security Info=False;Multiple Active Result Sets=True;Trust server certificate=True;User Instance=False")
                 connection.Open()
+
+                ' checks category if it exist or not 
+
+                Dim categoryExists As Boolean = False
+                Dim checkCommandText As String = "SELECT COUNT(*) FROM tblcategory WHERE categoryid = @categoryid"
+                Using checkCommand As New SqlCommand(checkCommandText, connection)
+                    checkCommand.Parameters.AddWithValue("@categoryid", categoryid)
+                    categoryExists = Convert.ToInt32(checkCommand.ExecuteScalar()) > 0
+                End Using
+
+                If Not categoryExists Then
+                    MessageBox.Show("Category with the specified ID does not exist.")
+                    Return
+                End If
 
                 ' Select data before deleting
                 Dim categoryName As String = ""
@@ -315,6 +359,7 @@ Public Class Product
                 End Using
 
                 ' Delete
+
                 Dim deleteCommandText As String = "DELETE FROM tblcategory WHERE categoryid = @categoryid"
                 Using deleteCommand As New SqlCommand(deleteCommandText, connection)
                     deleteCommand.Parameters.AddWithValue("@categoryid", categoryid)
@@ -339,47 +384,62 @@ Public Class Product
         End Try
     End Sub
 
+
+    ' Removing product and moving to bin
     Private Sub btndeleteproduct_Click(sender As Object, e As EventArgs) Handles btndeleteproduct.Click
         Try
             Dim productid As String = txtproductid.Text
+            If String.IsNullOrWhiteSpace(productid) Then
+                MessageBox.Show("Please enter a product ID.")
+                Return
+            End If
 
             Using connection As New SqlConnection("Data Source=THEG\SQLEXPRESS;Initial Catalog=PROJECT;Integrated Security=True;Persist Security Info=False;Multiple Active Result Sets=True;Trust server certificate=True;User Instance=False")
                 connection.Open()
 
-                ' Select data before deleting
-                Dim productName As String = ""
-                Dim selectCommandText As String = "SELECT productname FROM tblproductmanagement WHERE productid = @productid"
-                Using selectCommand As New SqlCommand(selectCommandText, connection)
-                    selectCommand.Parameters.AddWithValue("@productid", productid)
-                    productName = Convert.ToString(selectCommand.ExecuteScalar())
+                ' Check if the product exists
+                Dim productExists As Boolean = False
+                Dim checkCommandText As String = "SELECT COUNT(*) FROM tblproductmanagement WHERE productid = @productid"
+                Using checkCommand As New SqlCommand(checkCommandText, connection)
+                    checkCommand.Parameters.AddWithValue("@productid", productid)
+                    productExists = Convert.ToInt32(checkCommand.ExecuteScalar()) > 0
                 End Using
 
-                ' Delete
+                If Not productExists Then
+                    MessageBox.Show("Product with the specified ID does not exist.")
+                    Return
+                End If
+
+                ' Move product to bin
+                Dim moveCommandText As String = "INSERT INTO tblproductmanagementbin (productid, productname, category, quantity, sellingprice, costprice) " &
+                                             "SELECT productid, productname, category, quantity, sellingprice, costprice FROM tblproductmanagement WHERE productid = @productid"
+                Using moveCommand As New SqlCommand(moveCommandText, connection)
+                    moveCommand.Parameters.AddWithValue("@productid", productid)
+                    moveCommand.ExecuteNonQuery()
+                End Using
+
+                ' Delete from product management table
                 Dim deleteCommandText As String = "DELETE FROM tblproductmanagement WHERE productid = @productid"
                 Using deleteCommand As New SqlCommand(deleteCommandText, connection)
                     deleteCommand.Parameters.AddWithValue("@productid", productid)
                     deleteCommand.ExecuteNonQuery()
                 End Using
 
-                ' Insert into bin
-                Dim insertCommandText As String = "INSERT INTO tblproductmanagementbin(productid, productname) VALUES (@productid, @productname)"
-                Using insertCommand As New SqlCommand(insertCommandText, connection)
-                    insertCommand.Parameters.AddWithValue("@productid", productid)
-                    insertCommand.Parameters.AddWithValue("@productname", productName)
-                    insertCommand.ExecuteNonQuery()
-                End Using
-
-                MessageBox.Show("Product removed successfully.")
+                MessageBox.Show("Product moved to bin successfully.")
             End Using
         Catch ex As SqlException
             MessageBox.Show("SQL insertion error: " & ex.Message)
         Catch ex As Exception
-            MessageBox.Show("Error removing product: " & ex.Message)
+            MessageBox.Show("Error moving product to bin: " & ex.Message)
         End Try
     End Sub
 
-    'for updating data of category
+
+
+    ' for updating category
     Private Sub btnupdatecategory_Click(sender As Object, e As EventArgs) Handles btnupdatecategory.Click
+        Dim changesMade As Boolean = False ' Flag to track changes
+
         Try
             connection.Open()
 
@@ -388,16 +448,46 @@ Public Class Product
                     Dim categoryid As String = row.Cells("categoryid").Value.ToString()
                     Dim categoryname As String = row.Cells("categoryname").Value.ToString()
 
-                    Dim updateCommandText As String = "UPDATE tblcategory SET categoryname = @categoryname WHERE categoryid = @categoryid"
-                    Using updateCommand As New SqlCommand(updateCommandText, connection)
-                        updateCommand.Parameters.AddWithValue("@categoryid", categoryid)
-                        updateCommand.Parameters.AddWithValue("@categoryname", categoryname)
-                        updateCommand.ExecuteNonQuery()
+                    ' Check if there are any changes
+                    Dim originalCategoryName As String = ""
+                    Dim selectCommandText As String = "SELECT categoryname FROM tblcategory WHERE categoryid = @categoryid"
+                    Using selectCommand As New SqlCommand(selectCommandText, connection)
+                        selectCommand.Parameters.AddWithValue("@categoryid", categoryid)
+                        originalCategoryName = Convert.ToString(selectCommand.ExecuteScalar())
                     End Using
+
+                    If categoryname <> originalCategoryName Then ' Change detected
+                        changesMade = True
+
+                        ' Check if there is already an existing category with the same name
+                        Dim checkCommandText As String = "SELECT COUNT(*) FROM tblcategory WHERE categoryname = @categoryname AND categoryid != @categoryid"
+                        Using checkCommand As New SqlCommand(checkCommandText, connection)
+                            checkCommand.Parameters.AddWithValue("@categoryname", categoryname)
+                            checkCommand.Parameters.AddWithValue("@categoryid", categoryid)
+                            Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+                            If count > 0 Then
+                                MessageBox.Show("Category name '" & categoryname & "' already exists.")
+                                Return
+                            End If
+                        End Using
+
+                        ' Update the category name
+                        Dim updateCommandText As String = "UPDATE tblcategory SET categoryname = @categoryname WHERE categoryid = @categoryid"
+                        Using updateCommand As New SqlCommand(updateCommandText, connection)
+                            updateCommand.Parameters.AddWithValue("@categoryid", categoryid)
+                            updateCommand.Parameters.AddWithValue("@categoryname", categoryname)
+                            updateCommand.ExecuteNonQuery()
+                        End Using
+                    End If
                 End If
             Next
 
-            MessageBox.Show("Data updated successfully.")
+            If Not changesMade Then
+                MessageBox.Show("Please make changes before updating.")
+            Else
+                MessageBox.Show("Data updated successfully.")
+            End If
+
         Catch ex As Exception
             MessageBox.Show("Error updating data: " & ex.Message)
         Finally
@@ -407,6 +497,8 @@ Public Class Product
 
     'for updating product
     Private Sub btnupdateproduct_Click(sender As Object, e As EventArgs) Handles btnupdateproduct.Click
+        Dim changesMade As Boolean = False ' Flag to track changes
+
         Try
             connection.Open()
 
@@ -419,26 +511,67 @@ Public Class Product
                     Dim sellingprice As Decimal = Convert.ToDecimal(row.Cells("sellingprice").Value)
                     Dim costprice As Decimal = Convert.ToDecimal(row.Cells("costprice").Value)
 
-                    Dim updateCommandText As String = "UPDATE tblproductmanagement SET productname = @productname, category = @category, quantity = @quantity, sellingprice = @sellingprice, costprice = @costprice WHERE productid = @productid"
-                    Using updateCommand As New SqlCommand(updateCommandText, connection)
-                        updateCommand.Parameters.AddWithValue("@productid", productid)
-                        updateCommand.Parameters.AddWithValue("@productname", productname)
-                        updateCommand.Parameters.AddWithValue("@category", category)
-                        updateCommand.Parameters.AddWithValue("@quantity", quantity)
-                        updateCommand.Parameters.AddWithValue("@sellingprice", sellingprice)
-                        updateCommand.Parameters.AddWithValue("@costprice", costprice)
-                        updateCommand.ExecuteNonQuery()
+                    ' Check if there are any changes
+                    Dim originalProductName As String = ""
+                    Dim originalCategory As String = ""
+                    Dim originalQuantity As Integer
+                    Dim originalSellingPrice As Decimal
+                    Dim originalCostPrice As Decimal
+                    Dim selectCommandText As String = "SELECT productname, category, quantity, sellingprice, costprice FROM tblproductmanagement WHERE productid = @productid"
+                    Using selectCommand As New SqlCommand(selectCommandText, connection)
+                        selectCommand.Parameters.AddWithValue("@productid", productid)
+                        Dim reader As SqlDataReader = selectCommand.ExecuteReader()
+                        If reader.Read() Then
+                            originalProductName = reader("productname").ToString()
+                            originalCategory = reader("category").ToString()
+                            originalQuantity = Convert.ToInt32(reader("quantity"))
+                            originalSellingPrice = Convert.ToDecimal(reader("sellingprice"))
+                            originalCostPrice = Convert.ToDecimal(reader("costprice"))
+                        End If
+                        reader.Close()
                     End Using
+
+                    If productname <> originalProductName OrElse category <> originalCategory OrElse quantity <> originalQuantity OrElse sellingprice <> originalSellingPrice OrElse costprice <> originalCostPrice Then ' Change detected
+                        changesMade = True
+
+                        ' Check if the product name already exists
+                        Dim checkCommandText As String = "SELECT COUNT(*) FROM tblproductmanagement WHERE productname = @productname AND productid != @productid"
+                        Using checkCommand As New SqlCommand(checkCommandText, connection)
+                            checkCommand.Parameters.AddWithValue("@productname", productname)
+                            checkCommand.Parameters.AddWithValue("@productid", productid)
+                            Dim count As Integer = Convert.ToInt32(checkCommand.ExecuteScalar())
+                            If count > 0 Then
+                                MessageBox.Show("Product name '" & productname & "' already exists.")
+                                Return
+                            End If
+                        End Using
+
+                        ' Update the product data
+                        Dim updateCommandText As String = "UPDATE tblproductmanagement SET productname = @productname, category = @category, quantity = @quantity, sellingprice = @sellingprice, costprice = @costprice WHERE productid = @productid"
+                        Using updateCommand As New SqlCommand(updateCommandText, connection)
+                            updateCommand.Parameters.AddWithValue("@productid", productid)
+                            updateCommand.Parameters.AddWithValue("@productname", productname)
+                            updateCommand.Parameters.AddWithValue("@category", category)
+                            updateCommand.Parameters.AddWithValue("@quantity", quantity)
+                            updateCommand.Parameters.AddWithValue("@sellingprice", sellingprice)
+                            updateCommand.Parameters.AddWithValue("@costprice", costprice)
+                            updateCommand.ExecuteNonQuery()
+                        End Using
+                    End If
                 End If
             Next
 
-            MessageBox.Show("Data updated successfully.")
+            If changesMade Then
+                MessageBox.Show("Data updated successfully.")
+            Else
+                MessageBox.Show("Please make changes before updating.")
+            End If
+
         Catch ex As Exception
             MessageBox.Show("Error updating data: " & ex.Message)
         Finally
             connection.Close()
         End Try
     End Sub
-
 
 End Class
