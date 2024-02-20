@@ -1,4 +1,5 @@
-﻿Imports Microsoft.Data.SqlClient
+﻿Imports System.Text
+Imports Microsoft.Data.SqlClient
 
 Public Class billingandsales
 
@@ -174,6 +175,33 @@ Public Class billingandsales
         txtproductname.ForeColor = SystemColors.ControlText
         CalculateGrandTotal()
 
+        Me.BackColor = Color.WhiteSmoke
+        txtproductname.BackColor = SystemColors.Window
+        txtproductname.ForeColor = SystemColors.ControlText
+        txtquantity.BackColor = SystemColors.Window
+        txtquantity.ForeColor = SystemColors.ControlText
+        txtunitprice.BackColor = SystemColors.Window
+        txtunitprice.ForeColor = SystemColors.ControlText
+        txtdiscount.BackColor = SystemColors.Window
+        txtdiscount.ForeColor = SystemColors.ControlText
+        txttotal.BackColor = SystemColors.Window
+        txttotal.ForeColor = SystemColors.ControlText
+        ' Update button colors for light mode
+        btnaddtolist.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btnhome.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btnprint.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btnnewbill.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        ' Set text colors for light mode
+        btnaddtolist.ForeColor = Color.White
+        btnhome.ForeColor = Color.White
+        btnprint.ForeColor = Color.White
+        btnnewbill.ForeColor = Color.White
+        For Each ctrl As Control In GetAllControlsRecursive(Me)
+            If TypeOf ctrl Is Label Then
+                ctrl.ForeColor = Color.Black
+            End If
+        Next
+
     End Sub
 
 
@@ -330,10 +358,100 @@ Public Class billingandsales
         gridbilling.DataSource = Nothing
     End Sub
 
+
     Private Sub btnhome_Click(sender As Object, e As EventArgs) Handles btnhome.Click
         Dim Dashboard As New Dashboard()
         Dashboard.Show()
         Me.Hide()
+    End Sub
+
+    Private darkModeEnabled As Boolean = False
+    Private Sub Nightmode_CheckedChanged(sender As Object, e As EventArgs) Handles Nightmode.CheckedChanged
+        ' Toggle dark mode state
+        darkModeEnabled = Nightmode.Checked
+
+        ' Update form appearance
+        If darkModeEnabled Then
+            ' Set dark mode
+            Me.BackColor = Color.FromArgb(31, 31, 31)
+            txtproductname.BackColor = Color.FromArgb(45, 45, 48)
+            txtproductname.ForeColor = Color.White
+            txtquantity.BackColor = Color.FromArgb(45, 45, 48)
+            txtquantity.ForeColor = Color.White
+            txtunitprice.BackColor = Color.FromArgb(45, 45, 48)
+            txtunitprice.ForeColor = Color.White
+            txtdiscount.BackColor = Color.FromArgb(45, 45, 48)
+            txtdiscount.ForeColor = Color.White
+            txttotal.BackColor = Color.FromArgb(45, 45, 48)
+            txttotal.ForeColor = Color.White
+            ' Update button colors for dark mode
+            btnaddtolist.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnhome.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnprint.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnnewbill.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            ' Set text colors for dark mode
+            btnaddtolist.ForeColor = Color.White
+            btnhome.ForeColor = Color.White
+            btnprint.ForeColor = Color.White
+            btnnewbill.ForeColor = Color.White
+            For Each ctrl As Control In GetAllControlsRecursive(Me)
+                If TypeOf ctrl Is Label Then
+                    ctrl.ForeColor = Color.White
+                End If
+            Next
+        Else
+            ' Set light mode
+            Me.BackColor = Color.WhiteSmoke
+            txtproductname.BackColor = SystemColors.Window
+            txtproductname.ForeColor = SystemColors.ControlText
+            txtquantity.BackColor = SystemColors.Window
+            txtquantity.ForeColor = SystemColors.ControlText
+            txtunitprice.BackColor = SystemColors.Window
+            txtunitprice.ForeColor = SystemColors.ControlText
+            txtdiscount.BackColor = SystemColors.Window
+            txtdiscount.ForeColor = SystemColors.ControlText
+            txttotal.BackColor = SystemColors.Window
+            txttotal.ForeColor = SystemColors.ControlText
+            ' Update button colors for light mode
+            btnaddtolist.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnhome.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnprint.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnnewbill.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            ' Set text colors for light mode
+            btnaddtolist.ForeColor = Color.White
+            btnhome.ForeColor = Color.White
+            btnprint.ForeColor = Color.White
+            btnnewbill.ForeColor = Color.White
+            For Each ctrl As Control In GetAllControlsRecursive(Me)
+                If TypeOf ctrl Is Label Then
+                    ctrl.ForeColor = Color.Black
+                End If
+            Next
+        End If
+    End Sub
+
+    Private Function GetAllControlsRecursive(ByVal parent As Control) As List(Of Control)
+        Dim controlList As New List(Of Control)
+
+        For Each childControl As Control In parent.Controls
+            ' Add the current control to the list
+            controlList.Add(childControl)
+            ' Recursively call the function for child controls
+            controlList.AddRange(GetAllControlsRecursive(childControl))
+        Next
+
+        Return controlList
+    End Function
+
+
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
     End Sub
 End Class
 

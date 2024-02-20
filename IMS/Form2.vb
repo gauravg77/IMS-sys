@@ -5,7 +5,7 @@ Public Class Signup
     Dim loginForm As New Login()
     Dim connection As New SqlConnection("Data Source=THEG\SQLEXPRESS;Initial Catalog=PROJECT;Integrated Security=True;Persist Security Info=False;Multiple Active Result Sets=True;Trust Server Certificate=True;User Instance=False")
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles btnsignup.Click
-
+        Dim CID As String = TextBoxCID.Text
         Dim username As String = TextBoxusername.Text
         Dim password As String = TextBoxpassword.Text
         Dim confirmpassword As String = TextBoxConfirmpassword.Text
@@ -17,7 +17,7 @@ Public Class Signup
             Return
         End If
         If TextBoxConfirmpassword.Text = TextBoxpassword.Text Then
-            Dim command As New SqlCommand("insert into tbllogindetails(username,Password)values ('" & username & "','" & password & "')", connection) 'sqlcommand lai duita parameter chaincha, one is query ani another is the variable for sql connection
+            Dim command As New SqlCommand("insert into tbllogindetails(username,Password,CID)values ('" & username & "','" & password & "','" & CID & "')", connection) 'sqlcommand lai duita parameter chaincha, one is query ani another is the variable for sql connection
 
             Try
                 connection.Open()
@@ -49,7 +49,16 @@ Public Class Signup
         Me.Hide()
     End Sub
 
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+            TextBoxpassword.UseSystemPasswordChar = True
+            TextBoxConfirmpassword.UseSystemPasswordChar = True
+
+        Else
+            TextBoxpassword.UseSystemPasswordChar = False
+            TextBoxConfirmpassword.UseSystemPasswordChar = False
+
+        End If
     End Sub
 End Class

@@ -31,10 +31,10 @@ Partial Class Login
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         btnlogin = New Guna.UI2.WinForms.Guna2Button()
-        Guna2CheckBox1 = New Guna.UI2.WinForms.Guna2CheckBox()
         btnsignup = New Guna.UI2.WinForms.Guna2Button()
         textboxuserid = New TextBox()
         textboxpassword = New TextBox()
+        CheckBoxpassword = New CheckBox()
         CType(Guna2PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -67,24 +67,6 @@ Partial Class Login
         btnlogin.Size = New Size(265, 39)
         btnlogin.TabIndex = 5
         btnlogin.Text = "LOG IN"
-        ' 
-        ' Guna2CheckBox1
-        ' 
-        Guna2CheckBox1.Animated = True
-        Guna2CheckBox1.AutoSize = True
-        Guna2CheckBox1.CheckedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        Guna2CheckBox1.CheckedState.BorderRadius = 0
-        Guna2CheckBox1.CheckedState.BorderThickness = 0
-        Guna2CheckBox1.CheckedState.FillColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        Guna2CheckBox1.Location = New Point(248, 341)
-        Guna2CheckBox1.Name = "Guna2CheckBox1"
-        Guna2CheckBox1.Size = New Size(132, 24)
-        Guna2CheckBox1.TabIndex = 6
-        Guna2CheckBox1.Text = "Show Password"
-        Guna2CheckBox1.UncheckedState.BorderColor = Color.FromArgb(CByte(125), CByte(137), CByte(149))
-        Guna2CheckBox1.UncheckedState.BorderRadius = 0
-        Guna2CheckBox1.UncheckedState.BorderThickness = 0
-        Guna2CheckBox1.UncheckedState.FillColor = Color.FromArgb(CByte(125), CByte(137), CByte(149))
         ' 
         ' btnsignup
         ' 
@@ -123,7 +105,16 @@ Partial Class Login
         textboxpassword.PlaceholderText = "Password"
         textboxpassword.Size = New Size(265, 40)
         textboxpassword.TabIndex = 11
-        textboxpassword.UseSystemPasswordChar = True
+        ' 
+        ' CheckBoxpassword
+        ' 
+        CheckBoxpassword.AutoSize = True
+        CheckBoxpassword.Location = New Point(248, 336)
+        CheckBoxpassword.Name = "CheckBoxpassword"
+        CheckBoxpassword.Size = New Size(132, 24)
+        CheckBoxpassword.TabIndex = 12
+        CheckBoxpassword.Text = "Show Password"
+        CheckBoxpassword.UseVisualStyleBackColor = True
         ' 
         ' Login
         ' 
@@ -131,10 +122,10 @@ Partial Class Login
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(482, 648)
+        Controls.Add(CheckBoxpassword)
         Controls.Add(textboxpassword)
         Controls.Add(textboxuserid)
         Controls.Add(btnsignup)
-        Controls.Add(Guna2CheckBox1)
         Controls.Add(btnlogin)
         Controls.Add(Guna2PictureBox1)
         FormBorderStyle = FormBorderStyle.FixedSingle
@@ -150,8 +141,8 @@ Partial Class Login
 
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents btnlogin As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2CheckBox1 As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents btnsignup As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents textboxuserid As TextBox
     Friend WithEvents textboxpassword As TextBox
+    Friend WithEvents CheckBoxpassword As CheckBox
 End Class

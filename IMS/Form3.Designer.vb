@@ -32,7 +32,7 @@ Partial Class Product
         Label8 = New Label()
         Label9 = New Label()
         btnaddcategory = New Button()
-        bthclearcategory = New Button()
+        btnclearcategory = New Button()
         btndeletecategory = New Button()
         btnupdatecategory = New Button()
         btnaddproduct = New Button()
@@ -57,8 +57,13 @@ Partial Class Product
         GroupBox1 = New GroupBox()
         GroupBox2 = New GroupBox()
         btnhome = New Button()
+        Nightmode = New CheckBox()
+        btncbin = New Button()
+        btnpbin = New Button()
         CType(gridproduct, ComponentModel.ISupportInitialize).BeginInit()
         CType(gridcategory, ComponentModel.ISupportInitialize).BeginInit()
+        GroupBox1.SuspendLayout()
+        GroupBox2.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
@@ -153,28 +158,29 @@ Partial Class Product
         ' btnaddcategory
         ' 
         btnaddcategory.AccessibleName = "btnaddcategory"
-        btnaddcategory.Location = New Point(57, 366)
+        btnaddcategory.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        btnaddcategory.Location = New Point(270, 278)
         btnaddcategory.Name = "btnaddcategory"
-        btnaddcategory.Size = New Size(94, 29)
+        btnaddcategory.Size = New Size(294, 29)
         btnaddcategory.TabIndex = 10
         btnaddcategory.Text = "ADD"
         btnaddcategory.UseVisualStyleBackColor = True
         ' 
-        ' bthclearcategory
+        ' btnclearcategory
         ' 
-        bthclearcategory.AccessibleName = "bthclearcategory"
-        bthclearcategory.BackColor = SystemColors.Control
-        bthclearcategory.Location = New Point(483, 158)
-        bthclearcategory.Name = "bthclearcategory"
-        bthclearcategory.Size = New Size(94, 29)
-        bthclearcategory.TabIndex = 11
-        bthclearcategory.Text = "CLEAR"
-        bthclearcategory.UseVisualStyleBackColor = False
+        btnclearcategory.AccessibleName = "btnclearcategory"
+        btnclearcategory.BackColor = SystemColors.Control
+        btnclearcategory.Location = New Point(483, 158)
+        btnclearcategory.Name = "btnclearcategory"
+        btnclearcategory.Size = New Size(94, 29)
+        btnclearcategory.TabIndex = 11
+        btnclearcategory.Text = "CLEAR"
+        btnclearcategory.UseVisualStyleBackColor = False
         ' 
         ' btndeletecategory
         ' 
         btndeletecategory.AccessibleName = "btndeletecategory"
-        btndeletecategory.Location = New Point(291, 366)
+        btndeletecategory.Location = New Point(370, 313)
         btndeletecategory.Name = "btndeletecategory"
         btndeletecategory.Size = New Size(94, 29)
         btndeletecategory.TabIndex = 12
@@ -184,7 +190,7 @@ Partial Class Product
         ' btnupdatecategory
         ' 
         btnupdatecategory.AccessibleName = "btnupdatecategory"
-        btnupdatecategory.Location = New Point(173, 366)
+        btnupdatecategory.Location = New Point(270, 313)
         btnupdatecategory.Name = "btnupdatecategory"
         btnupdatecategory.Size = New Size(94, 29)
         btnupdatecategory.TabIndex = 13
@@ -194,9 +200,10 @@ Partial Class Product
         ' btnaddproduct
         ' 
         btnaddproduct.AccessibleName = "btnaddproduct"
-        btnaddproduct.Location = New Point(844, 366)
+        btnaddproduct.Font = New Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        btnaddproduct.Location = New Point(392, 278)
         btnaddproduct.Name = "btnaddproduct"
-        btnaddproduct.Size = New Size(94, 29)
+        btnaddproduct.Size = New Size(294, 29)
         btnaddproduct.TabIndex = 14
         btnaddproduct.Text = "ADD"
         btnaddproduct.UseVisualStyleBackColor = True
@@ -204,7 +211,7 @@ Partial Class Product
         ' btnupdateproduct
         ' 
         btnupdateproduct.AccessibleName = "btnupdateproduct"
-        btnupdateproduct.Location = New Point(966, 366)
+        btnupdateproduct.Location = New Point(392, 313)
         btnupdateproduct.Name = "btnupdateproduct"
         btnupdateproduct.Size = New Size(94, 29)
         btnupdateproduct.TabIndex = 15
@@ -214,7 +221,7 @@ Partial Class Product
         ' btndeleteproduct
         ' 
         btndeleteproduct.AccessibleName = "btndeleteproduct"
-        btndeleteproduct.Location = New Point(1091, 366)
+        btndeleteproduct.Location = New Point(492, 313)
         btndeleteproduct.Name = "btndeleteproduct"
         btndeleteproduct.Size = New Size(94, 29)
         btndeleteproduct.TabIndex = 16
@@ -224,7 +231,7 @@ Partial Class Product
         ' btnclearproduct
         ' 
         btnclearproduct.AccessibleName = "btnclearproduct"
-        btnclearproduct.Location = New Point(1308, 158)
+        btnclearproduct.Location = New Point(592, 84)
         btnclearproduct.Name = "btnclearproduct"
         btnclearproduct.Size = New Size(94, 29)
         btnclearproduct.TabIndex = 17
@@ -238,7 +245,7 @@ Partial Class Product
         txtcategoryid.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         txtcategoryid.Location = New Point(173, 125)
         txtcategoryid.Name = "txtcategoryid"
-        txtcategoryid.Size = New Size(276, 27)
+        txtcategoryid.Size = New Size(304, 27)
         txtcategoryid.TabIndex = 18
         ' 
         ' txtcategoryname
@@ -248,7 +255,7 @@ Partial Class Product
         txtcategoryname.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         txtcategoryname.Location = New Point(173, 160)
         txtcategoryname.Name = "txtcategoryname"
-        txtcategoryname.Size = New Size(276, 27)
+        txtcategoryname.Size = New Size(304, 27)
         txtcategoryname.TabIndex = 19
         ' 
         ' txtsellingprice
@@ -258,7 +265,7 @@ Partial Class Product
         txtsellingprice.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         txtsellingprice.Location = New Point(966, 262)
         txtsellingprice.Name = "txtsellingprice"
-        txtsellingprice.Size = New Size(303, 27)
+        txtsellingprice.Size = New Size(530, 27)
         txtsellingprice.TabIndex = 20
         ' 
         ' txtquantity
@@ -268,7 +275,7 @@ Partial Class Product
         txtquantity.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         txtquantity.Location = New Point(966, 229)
         txtquantity.Name = "txtquantity"
-        txtquantity.Size = New Size(303, 27)
+        txtquantity.Size = New Size(530, 27)
         txtquantity.TabIndex = 21
         ' 
         ' txtproductid
@@ -278,7 +285,7 @@ Partial Class Product
         txtproductid.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         txtproductid.Location = New Point(966, 129)
         txtproductid.Name = "txtproductid"
-        txtproductid.Size = New Size(303, 27)
+        txtproductid.Size = New Size(430, 27)
         txtproductid.TabIndex = 22
         ' 
         ' txtproductname
@@ -288,7 +295,7 @@ Partial Class Product
         txtproductname.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         txtproductname.Location = New Point(966, 162)
         txtproductname.Name = "txtproductname"
-        txtproductname.Size = New Size(303, 27)
+        txtproductname.Size = New Size(430, 27)
         txtproductname.TabIndex = 23
         ' 
         ' comboboxcategory
@@ -298,7 +305,7 @@ Partial Class Product
         comboboxcategory.FormattingEnabled = True
         comboboxcategory.Location = New Point(966, 195)
         comboboxcategory.Name = "comboboxcategory"
-        comboboxcategory.Size = New Size(303, 28)
+        comboboxcategory.Size = New Size(530, 28)
         comboboxcategory.TabIndex = 24
         ' 
         ' txtcostprice
@@ -308,7 +315,7 @@ Partial Class Product
         txtcostprice.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
         txtcostprice.Location = New Point(966, 295)
         txtcostprice.Name = "txtcostprice"
-        txtcostprice.Size = New Size(303, 27)
+        txtcostprice.Size = New Size(530, 27)
         txtcostprice.TabIndex = 25
         ' 
         ' btncategorysearch
@@ -325,7 +332,7 @@ Partial Class Product
         ' btnproductsearch
         ' 
         btnproductsearch.AccessibleName = "btnproductsearch"
-        btnproductsearch.Location = New Point(1308, 123)
+        btnproductsearch.Location = New Point(592, 52)
         btnproductsearch.Name = "btnproductsearch"
         btnproductsearch.Size = New Size(94, 29)
         btnproductsearch.TabIndex = 27
@@ -335,9 +342,8 @@ Partial Class Product
         ' gridproduct
         ' 
         gridproduct.AccessibleName = "gridproduct"
-        gridproduct.BackgroundColor = SystemColors.Control
         gridproduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        gridproduct.Location = New Point(810, 438)
+        gridproduct.Location = New Point(810, 460)
         gridproduct.Name = "gridproduct"
         gridproduct.RowHeadersWidth = 51
         gridproduct.RowTemplate.Height = 29
@@ -347,9 +353,8 @@ Partial Class Product
         ' gridcategory
         ' 
         gridcategory.AccessibleName = "gridcategory"
-        gridcategory.BackgroundColor = SystemColors.ButtonHighlight
         gridcategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        gridcategory.Location = New Point(27, 438)
+        gridcategory.Location = New Point(27, 460)
         gridcategory.Name = "gridcategory"
         gridcategory.RowHeadersWidth = 51
         gridcategory.RowTemplate.Height = 29
@@ -359,7 +364,7 @@ Partial Class Product
         ' btnrefreshproduct
         ' 
         btnrefreshproduct.AccessibleName = "btnrefreshproduct"
-        btnrefreshproduct.Location = New Point(1207, 366)
+        btnrefreshproduct.Location = New Point(592, 313)
         btnrefreshproduct.Name = "btnrefreshproduct"
         btnrefreshproduct.Size = New Size(94, 29)
         btnrefreshproduct.TabIndex = 31
@@ -369,7 +374,7 @@ Partial Class Product
         ' btnrefreshcategory
         ' 
         btnrefreshcategory.AccessibleName = "btnrefreshcategory"
-        btnrefreshcategory.Location = New Point(410, 366)
+        btnrefreshcategory.Location = New Point(470, 313)
         btnrefreshcategory.Name = "btnrefreshcategory"
         btnrefreshcategory.Size = New Size(94, 29)
         btnrefreshcategory.TabIndex = 32
@@ -383,18 +388,28 @@ Partial Class Product
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(btnaddcategory)
+        GroupBox1.Controls.Add(btnrefreshcategory)
+        GroupBox1.Controls.Add(btndeletecategory)
+        GroupBox1.Controls.Add(btnupdatecategory)
         GroupBox1.Location = New Point(27, 76)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(570, 342)
+        GroupBox1.Size = New Size(570, 356)
         GroupBox1.TabIndex = 33
         GroupBox1.TabStop = False
         GroupBox1.Text = "CATEGORY MANAGEMENT"
         ' 
         ' GroupBox2
         ' 
+        GroupBox2.Controls.Add(btnproductsearch)
+        GroupBox2.Controls.Add(btnclearproduct)
+        GroupBox2.Controls.Add(btnrefreshproduct)
+        GroupBox2.Controls.Add(btndeleteproduct)
+        GroupBox2.Controls.Add(btnupdateproduct)
+        GroupBox2.Controls.Add(btnaddproduct)
         GroupBox2.Location = New Point(810, 76)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(659, 342)
+        GroupBox2.Size = New Size(866, 356)
         GroupBox2.TabIndex = 34
         GroupBox2.TabStop = False
         GroupBox2.Text = "PRODUCT MANAGEMENT"
@@ -404,10 +419,41 @@ Partial Class Product
         btnhome.AccessibleName = "btnhome"
         btnhome.Location = New Point(27, 12)
         btnhome.Name = "btnhome"
-        btnhome.Size = New Size(94, 29)
+        btnhome.Size = New Size(156, 27)
         btnhome.TabIndex = 35
         btnhome.Text = "Home"
         btnhome.UseVisualStyleBackColor = True
+        ' 
+        ' Nightmode
+        ' 
+        Nightmode.AccessibleName = "Nightmode"
+        Nightmode.AutoSize = True
+        Nightmode.Location = New Point(212, 12)
+        Nightmode.Name = "Nightmode"
+        Nightmode.Size = New Size(107, 24)
+        Nightmode.TabIndex = 42
+        Nightmode.Text = "Nightmode"
+        Nightmode.UseVisualStyleBackColor = True
+        ' 
+        ' btncbin
+        ' 
+        btncbin.AccessibleName = "btncbin"
+        btncbin.Location = New Point(27, 824)
+        btncbin.Name = "btncbin"
+        btncbin.Size = New Size(570, 54)
+        btncbin.TabIndex = 43
+        btncbin.Text = "VIEW BIN"
+        btncbin.UseVisualStyleBackColor = True
+        ' 
+        ' btnpbin
+        ' 
+        btnpbin.AccessibleName = "btnpbin"
+        btnpbin.Location = New Point(810, 824)
+        btnpbin.Name = "btnpbin"
+        btnpbin.Size = New Size(866, 54)
+        btnpbin.TabIndex = 44
+        btnpbin.Text = "VIEW BIN"
+        btnpbin.UseVisualStyleBackColor = True
         ' 
         ' Product
         ' 
@@ -416,12 +462,12 @@ Partial Class Product
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         ClientSize = New Size(1766, 1003)
+        Controls.Add(btnpbin)
+        Controls.Add(btncbin)
+        Controls.Add(Nightmode)
         Controls.Add(btnhome)
-        Controls.Add(btnrefreshcategory)
-        Controls.Add(btnrefreshproduct)
         Controls.Add(gridcategory)
         Controls.Add(gridproduct)
-        Controls.Add(btnproductsearch)
         Controls.Add(btncategorysearch)
         Controls.Add(txtcostprice)
         Controls.Add(comboboxcategory)
@@ -431,14 +477,7 @@ Partial Class Product
         Controls.Add(txtsellingprice)
         Controls.Add(txtcategoryname)
         Controls.Add(txtcategoryid)
-        Controls.Add(btnclearproduct)
-        Controls.Add(btndeleteproduct)
-        Controls.Add(btnupdateproduct)
-        Controls.Add(btnaddproduct)
-        Controls.Add(btnupdatecategory)
-        Controls.Add(btndeletecategory)
-        Controls.Add(bthclearcategory)
-        Controls.Add(btnaddcategory)
+        Controls.Add(btnclearcategory)
         Controls.Add(Label9)
         Controls.Add(Label8)
         Controls.Add(Label7)
@@ -456,6 +495,8 @@ Partial Class Product
         WindowState = FormWindowState.Maximized
         CType(gridproduct, ComponentModel.ISupportInitialize).EndInit()
         CType(gridcategory, ComponentModel.ISupportInitialize).EndInit()
+        GroupBox1.ResumeLayout(False)
+        GroupBox2.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -469,7 +510,7 @@ Partial Class Product
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents btnaddcategory As Button
-    Friend WithEvents bthclearcategory As Button
+    Friend WithEvents btnclearcategory As Button
     Friend WithEvents btndeletecategory As Button
     Friend WithEvents btnupdatecategory As Button
     Friend WithEvents btnaddproduct As Button
@@ -494,4 +535,7 @@ Partial Class Product
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btnhome As Button
+    Friend WithEvents Nightmode As CheckBox
+    Friend WithEvents btncbin As Button
+    Friend WithEvents btnpbin As Button
 End Class

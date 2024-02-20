@@ -59,6 +59,7 @@ Partial Class billingandsales
         btnnewbill = New Button()
         btnprint = New Button()
         btnhome = New Button()
+        Nightmode = New CheckBox()
         GroupBox1.SuspendLayout()
         GroupBox3.SuspendLayout()
         CType(gridbilling, ComponentModel.ISupportInitialize).BeginInit()
@@ -102,7 +103,7 @@ Partial Class billingandsales
         ' txtaddress
         ' 
         txtaddress.AccessibleName = "txtaddress"
-        txtaddress.Location = New Point(116, 47)
+        txtaddress.Location = New Point(116, 51)
         txtaddress.Name = "txtaddress"
         txtaddress.Size = New Size(429, 27)
         txtaddress.TabIndex = 4
@@ -180,7 +181,7 @@ Partial Class billingandsales
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(71, 280)
+        Label6.Location = New Point(9, 23)
         Label6.Name = "Label6"
         Label6.Size = New Size(104, 20)
         Label6.TabIndex = 14
@@ -189,7 +190,7 @@ Partial Class billingandsales
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(653, 280)
+        Label7.Location = New Point(591, 23)
         Label7.Name = "Label7"
         Label7.Size = New Size(93, 20)
         Label7.TabIndex = 15
@@ -198,7 +199,7 @@ Partial Class billingandsales
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Location = New Point(526, 280)
+        Label8.Location = New Point(464, 23)
         Label8.Name = "Label8"
         Label8.Size = New Size(72, 20)
         Label8.TabIndex = 16
@@ -207,7 +208,7 @@ Partial Class billingandsales
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Location = New Point(439, 280)
+        Label9.Location = New Point(377, 23)
         Label9.Name = "Label9"
         Label9.Size = New Size(32, 20)
         Label9.TabIndex = 17
@@ -236,7 +237,7 @@ Partial Class billingandsales
         ' 
         txttotal.AccessibleName = "txttotal"
         txttotal.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        txttotal.Location = New Point(718, 41)
+        txttotal.Location = New Point(718, 60)
         txttotal.Name = "txttotal"
         txttotal.Size = New Size(121, 27)
         txttotal.TabIndex = 20
@@ -253,7 +254,7 @@ Partial Class billingandsales
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Location = New Point(780, 280)
+        Label10.Location = New Point(718, 23)
         Label10.Name = "Label10"
         Label10.Size = New Size(42, 20)
         Label10.TabIndex = 22
@@ -263,7 +264,7 @@ Partial Class billingandsales
         ' 
         btnaddtolist.AccessibleName = "btnaddtolist"
         btnaddtolist.BackColor = SystemColors.ActiveCaption
-        btnaddtolist.Location = New Point(845, 39)
+        btnaddtolist.Location = New Point(845, 58)
         btnaddtolist.Name = "btnaddtolist"
         btnaddtolist.Size = New Size(94, 29)
         btnaddtolist.TabIndex = 23
@@ -275,9 +276,14 @@ Partial Class billingandsales
         GroupBox3.Controls.Add(txtunitprice)
         GroupBox3.Controls.Add(btnaddtolist)
         GroupBox3.Controls.Add(txttotal)
-        GroupBox3.Location = New Point(62, 264)
+        GroupBox3.Controls.Add(Label6)
+        GroupBox3.Controls.Add(Label9)
+        GroupBox3.Controls.Add(Label8)
+        GroupBox3.Controls.Add(Label7)
+        GroupBox3.Controls.Add(Label10)
+        GroupBox3.Location = New Point(62, 243)
         GroupBox3.Name = "GroupBox3"
-        GroupBox3.Size = New Size(952, 104)
+        GroupBox3.Size = New Size(952, 125)
         GroupBox3.TabIndex = 25
         GroupBox3.TabStop = False
         ' 
@@ -285,7 +291,7 @@ Partial Class billingandsales
         ' 
         txtunitprice.AccessibleName = "txtunitprice"
         txtunitprice.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        txtunitprice.Location = New Point(464, 39)
+        txtunitprice.Location = New Point(464, 60)
         txtunitprice.Name = "txtunitprice"
         txtunitprice.Size = New Size(121, 27)
         txtunitprice.TabIndex = 24
@@ -406,6 +412,17 @@ Partial Class billingandsales
         btnhome.Text = "home"
         btnhome.UseVisualStyleBackColor = True
         ' 
+        ' Nightmode
+        ' 
+        Nightmode.AccessibleName = "Nightmode"
+        Nightmode.AutoSize = True
+        Nightmode.Location = New Point(178, 31)
+        Nightmode.Name = "Nightmode"
+        Nightmode.Size = New Size(107, 24)
+        Nightmode.TabIndex = 41
+        Nightmode.Text = "Nightmode"
+        Nightmode.UseVisualStyleBackColor = True
+        ' 
         ' billingandsales
         ' 
         AccessibleName = "Billing and Sales"
@@ -413,6 +430,7 @@ Partial Class billingandsales
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.Control
         ClientSize = New Size(1766, 1003)
+        Controls.Add(Nightmode)
         Controls.Add(btnhome)
         Controls.Add(btnprint)
         Controls.Add(btnnewbill)
@@ -425,14 +443,9 @@ Partial Class billingandsales
         Controls.Add(Label13)
         Controls.Add(txttaxrate)
         Controls.Add(Label12)
-        Controls.Add(Label10)
         Controls.Add(txtdiscount)
         Controls.Add(txtsubtotal)
         Controls.Add(txtquantity)
-        Controls.Add(Label9)
-        Controls.Add(Label8)
-        Controls.Add(Label7)
-        Controls.Add(Label6)
         Controls.Add(txtproductname)
         Controls.Add(txtinvoicefor)
         Controls.Add(Label5)
@@ -495,4 +508,5 @@ Partial Class billingandsales
     Friend WithEvents btnnewbill As Button
     Friend WithEvents btnprint As Button
     Friend WithEvents btnhome As Button
+    Friend WithEvents Nightmode As CheckBox
 End Class

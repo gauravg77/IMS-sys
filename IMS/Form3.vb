@@ -1,5 +1,9 @@
 ﻿Imports System.Diagnostics.Eventing
 Imports Microsoft.Data.SqlClient
+Module NightModeHelper
+    Public NightModeEnabled As Boolean = False
+End Module
+
 
 Public Class Product
     Dim connection As New SqlConnection("Data Source=THEG\SQLEXPRESS;Initial Catalog=PROJECT;Integrated Security=True;Persist Security Info=False;Multiple Active Result Sets=True;Trust Server Certificate=True;User Instance=False")
@@ -68,6 +72,52 @@ Public Class Product
 
     ' Call PopulateCategoryComboBox method in the form load event
     Private Sub Product_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.BackColor = Color.WhiteSmoke ' Light blue
+        ' Update textboxes
+        txtcategoryname.BackColor = SystemColors.Window
+        txtcategoryname.ForeColor = SystemColors.ControlText
+        ' Update category management buttons
+        btnaddcategory.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btnclearcategory.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btndeletecategory.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btnrefreshcategory.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btnupdatecategory.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btnproductsearch.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btncategorysearch.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+
+
+        ' Update home button
+        btnhome.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        ' Update combobox
+        comboboxcategory.BackColor = SystemColors.Window
+        comboboxcategory.ForeColor = SystemColors.ControlText
+        ' Update product management buttons
+        btnaddproduct.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btnclearproduct.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btndeleteproduct.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btnrefreshproduct.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        btnupdateproduct.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+        ' Set text colors for light mode
+        btnaddcategory.ForeColor = Color.White
+        btnclearcategory.ForeColor = Color.White
+        btndeletecategory.ForeColor = Color.White
+        btnrefreshcategory.ForeColor = Color.White
+        btnupdatecategory.ForeColor = Color.White
+        btnhome.ForeColor = Color.White
+        btnaddproduct.ForeColor = Color.White
+        btnclearproduct.ForeColor = Color.White
+        btndeleteproduct.ForeColor = Color.White
+        btnrefreshproduct.ForeColor = Color.White
+        btnupdateproduct.ForeColor = Color.White
+        btnproductsearch.ForeColor = Color.White
+        btncategorysearch.ForeColor = Color.White
+
+        ' Update labels
+        For Each ctrl As Control In GetAllControlsRecursive(Me)
+            If TypeOf ctrl Is Label Then
+                ctrl.ForeColor = Color.Black ' Darker blue
+            End If
+        Next
         PopulateCategoryComboBox()
         LoadProductData()
         LoadCategoryData()
@@ -272,7 +322,7 @@ Public Class Product
     End Sub
 
     'to clear category
-    Private Sub bthclearcategory_Click(sender As Object, e As EventArgs) Handles bthclearcategory.Click
+    Private Sub bthclearcategory_Click(sender As Object, e As EventArgs) Handles btnclearcategory.Click
         txtcategoryid.Clear()
         txtcategoryname.Clear()
     End Sub
@@ -579,4 +629,185 @@ Public Class Product
         Dashboard.Show()
         Me.Hide()
     End Sub
+
+
+    'for darkmode and light mode
+    Private darkModeEnabled As Boolean = False
+
+    Private Sub Nightmode_CheckedChanged(sender As Object, e As EventArgs) Handles Nightmode.CheckedChanged
+        ' Toggle dark mode state
+        darkModeEnabled = Nightmode.Checked
+
+        ' Update form appearance
+        If darkModeEnabled Then
+            ' Set dark mode
+            Me.BackColor = Color.FromArgb(31, 31, 31)
+            ' Update textboxes
+            txtcategoryname.BackColor = Color.FromArgb(45, 45, 48)
+            txtcategoryname.ForeColor = Color.White
+            ' Update category management buttons
+            btnaddcategory.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnclearcategory.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btndeletecategory.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnrefreshcategory.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnupdatecategory.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btncategorysearch.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnproductsearch.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnpbin.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btncbin.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+
+            ' Update home button
+            btnhome.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            ' Update combobox
+            comboboxcategory.BackColor = Color.FromArgb(45, 45, 48)
+            comboboxcategory.ForeColor = Color.White
+            ' Update product management buttons
+            btnaddproduct.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnclearproduct.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btndeleteproduct.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnrefreshproduct.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnupdateproduct.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btnpbin.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            btncbin.BackColor = Color.FromArgb(64, 64, 64) ' Dark gray
+            ' Set text colors for dark mode
+            btnaddcategory.ForeColor = Color.White
+            btnclearcategory.ForeColor = Color.White
+            btndeletecategory.ForeColor = Color.White
+            btnrefreshcategory.ForeColor = Color.White
+            btnupdatecategory.ForeColor = Color.White
+            btnhome.ForeColor = Color.White
+            btnaddproduct.ForeColor = Color.White
+            btnclearproduct.ForeColor = Color.White
+            btndeleteproduct.ForeColor = Color.White
+            btnrefreshproduct.ForeColor = Color.White
+            btnupdateproduct.ForeColor = Color.White
+            btncategorysearch.ForeColor = Color.White
+            btnproductsearch.ForeColor = Color.White
+            btnpbin.ForeColor = Color.White
+            btncbin.ForeColor = Color.White
+
+
+            ' Update labels
+            For Each ctrl As Control In GetAllControlsRecursive(Me)
+                If TypeOf ctrl Is Label Then
+                    ctrl.ForeColor = Color.White
+                End If
+            Next
+        Else
+            ' Set light mode
+            Me.BackColor = Color.WhiteSmoke ' Light blue
+            ' Update textboxes
+            txtcategoryname.BackColor = SystemColors.Window
+            txtcategoryname.ForeColor = SystemColors.ControlText
+            ' Update category management buttons
+            btnaddcategory.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnclearcategory.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btndeletecategory.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnrefreshcategory.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnupdatecategory.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnproductsearch.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btncategorysearch.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnpbin.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btncbin.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+
+
+
+            ' Update home button
+            btnhome.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            ' Update combobox
+            comboboxcategory.BackColor = SystemColors.Window
+            comboboxcategory.ForeColor = SystemColors.ControlText
+            ' Update product management buttons
+            btnaddproduct.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnclearproduct.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btndeleteproduct.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnrefreshproduct.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnupdateproduct.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btnpbin.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+            btncbin.BackColor = Color.FromArgb(0, 70, 140) ' Dark blue
+
+            ' Set text colors for light mode
+            btnaddcategory.ForeColor = Color.White
+            btnclearcategory.ForeColor = Color.White
+            btndeletecategory.ForeColor = Color.White
+            btnrefreshcategory.ForeColor = Color.White
+            btnupdatecategory.ForeColor = Color.White
+            btnhome.ForeColor = Color.White
+            btnaddproduct.ForeColor = Color.White
+            btnclearproduct.ForeColor = Color.White
+            btndeleteproduct.ForeColor = Color.White
+            btnrefreshproduct.ForeColor = Color.White
+            btnupdateproduct.ForeColor = Color.White
+            btnproductsearch.ForeColor = Color.White
+            btncategorysearch.ForeColor = Color.White
+            btnpbin.ForeColor = Color.White
+
+            btncbin.ForeColor = Color.White
+
+
+            ' Update labels
+            For Each ctrl As Control In GetAllControlsRecursive(Me)
+                If TypeOf ctrl Is Label Then
+                    ctrl.ForeColor = Color.Black ' Darker blue
+                End If
+            Next
+        End If
+    End Sub
+
+    Private Function GetAllControlsRecursive(ByVal parent As Control) As List(Of Control)
+        Dim controlList As New List(Of Control)
+
+        For Each childControl As Control In parent.Controls
+            ' Add the current control to the list
+            controlList.Add(childControl)
+            ' Recursively call the function for child controls
+            controlList.AddRange(GetAllControlsRecursive(childControl))
+        Next
+
+        Return controlList
+    End Function
+
+    Private Sub btncbin_Click(sender As Object, e As EventArgs) Handles btncbin.Click
+        ' Assuming you have a connection established named "connectionString"
+        Dim queryString As String = "SELECT * FROM tblcategorybin"
+
+        Using connection As New SqlConnection("Data Source=THEG\SQLEXPRESS;Initial Catalog=PROJECT;Integrated Security=True;Persist Security Info=False;Multiple Active Result Sets=True;Trust server certificate=True;User Instance=False")
+            Dim dataAdapter As New SqlDataAdapter(queryString, connection)
+            Dim dataTable As New DataTable()
+
+            ' Fill the DataTable with the data from the SQL query
+            dataAdapter.Fill(dataTable)
+
+            ' Assign the DataTable as the DataSource for the DataGridView
+            gridcategory.DataSource = dataTable
+        End Using
+    End Sub
+
+    Private Sub btnpbin_Click(sender As Object, e As EventArgs) Handles btnpbin.Click
+
+        ' Define your SQL query to select data from the tblproductmanagementbin table
+        Dim query As String = "SELECT * FROM tblproductmanagementbin"
+
+        ' Create a new DataTable to hold the data
+        Dim dataTable As New DataTable()
+
+        ' Create a new SqlConnection using your connection string
+        Using connection As New SqlConnection("Data Source=THEG\SQLEXPRESS;Initial Catalog=PROJECT;Integrated Security=True;Persist Security Info=False;Multiple Active Result Sets=True;Trust server certificate=True;User Instance=False")
+            ' Create a new SqlDataAdapter with your query and connection
+            Using adapter As New SqlDataAdapter(query, connection)
+                Try
+                    connection.Open()
+                    ' Fill the DataTable with the data from the query
+                    adapter.Fill(dataTable)
+
+                    ' Bind the DataTable to the DataGridView
+                    gridproduct.DataSource = dataTable
+                Catch ex As Exception
+                    ' Handle any exceptions
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+    End Sub
+
 End Class

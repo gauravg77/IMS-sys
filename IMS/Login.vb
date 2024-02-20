@@ -48,17 +48,11 @@ Public Class Login
         End Try
     End Sub
 
-    Private Sub Guna2CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles Guna2CheckBox1.CheckedChanged
-
-        If Guna2CheckBox1.Checked = True Then
-            textboxpassword.UseSystemPasswordChar = False
-        Else
+    Private Sub CheckBoxpassword_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBoxpassword.CheckedChanged
+        If CheckBoxpassword.Checked = True Then
             textboxpassword.UseSystemPasswordChar = True
-            'End If
-            'If Guna2CheckBox1.Checked = False Then
-            '  textboxpassword.UseSystemPasswordChar = True
-            'Else
-            '    textboxpassword.UseSystemPasswordChar = False
+        Else
+            textboxpassword.UseSystemPasswordChar = False
         End If
     End Sub
 End Class

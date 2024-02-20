@@ -22,16 +22,18 @@ Partial Class Signup
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         btnsignup = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         TextBoxusername = New TextBox()
         TextBoxpassword = New TextBox()
         TextBoxConfirmpassword = New TextBox()
+        CheckBox1 = New CheckBox()
+        TextBoxCID = New TextBox()
         SuspendLayout()
         ' 
         ' Guna2HtmlLabel1
@@ -46,7 +48,7 @@ Partial Class Signup
         ' btnsignup
         ' 
         btnsignup.AccessibleName = ""
-        btnsignup.CustomizableEdges = CustomizableEdges5
+        btnsignup.CustomizableEdges = CustomizableEdges1
         btnsignup.DisabledState.BorderColor = Color.DarkGray
         btnsignup.DisabledState.CustomBorderColor = Color.DarkGray
         btnsignup.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -56,7 +58,7 @@ Partial Class Signup
         btnsignup.ForeColor = Color.White
         btnsignup.Location = New Point(112, 407)
         btnsignup.Name = "btnsignup"
-        btnsignup.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        btnsignup.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         btnsignup.Size = New Size(265, 39)
         btnsignup.TabIndex = 7
         btnsignup.Text = "SIGN UP"
@@ -64,7 +66,7 @@ Partial Class Signup
         ' Guna2Button2
         ' 
         Guna2Button2.CustomBorderThickness = New Padding(2)
-        Guna2Button2.CustomizableEdges = CustomizableEdges7
+        Guna2Button2.CustomizableEdges = CustomizableEdges3
         Guna2Button2.DisabledState.BorderColor = Color.DarkGray
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -74,7 +76,7 @@ Partial Class Signup
         Guna2Button2.ForeColor = Color.DimGray
         Guna2Button2.Location = New Point(112, 452)
         Guna2Button2.Name = "Guna2Button2"
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         Guna2Button2.Size = New Size(265, 53)
         Guna2Button2.TabIndex = 8
         Guna2Button2.Text = "Go back to login"
@@ -82,7 +84,7 @@ Partial Class Signup
         ' TextBoxusername
         ' 
         TextBoxusername.Font = New Font("Segoe UI Light", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        TextBoxusername.Location = New Point(112, 193)
+        TextBoxusername.Location = New Point(112, 202)
         TextBoxusername.Multiline = True
         TextBoxusername.Name = "TextBoxusername"
         TextBoxusername.PlaceholderText = "Username"
@@ -92,26 +94,46 @@ Partial Class Signup
         ' TextBoxpassword
         ' 
         TextBoxpassword.Font = New Font("Segoe UI Light", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        TextBoxpassword.Location = New Point(112, 239)
+        TextBoxpassword.Location = New Point(112, 248)
         TextBoxpassword.Multiline = True
         TextBoxpassword.Name = "TextBoxpassword"
         TextBoxpassword.PasswordChar = "*"c
         TextBoxpassword.PlaceholderText = "Password"
         TextBoxpassword.Size = New Size(265, 40)
         TextBoxpassword.TabIndex = 11
-        TextBoxpassword.UseSystemPasswordChar = True
         ' 
         ' TextBoxConfirmpassword
         ' 
         TextBoxConfirmpassword.Font = New Font("Segoe UI Light", 9F, FontStyle.Regular, GraphicsUnit.Point)
-        TextBoxConfirmpassword.Location = New Point(112, 285)
+        TextBoxConfirmpassword.Location = New Point(112, 294)
         TextBoxConfirmpassword.Multiline = True
         TextBoxConfirmpassword.Name = "TextBoxConfirmpassword"
         TextBoxConfirmpassword.PasswordChar = "*"c
         TextBoxConfirmpassword.PlaceholderText = "Confirm Password"
         TextBoxConfirmpassword.Size = New Size(265, 40)
         TextBoxConfirmpassword.TabIndex = 12
-        TextBoxConfirmpassword.UseSystemPasswordChar = True
+        ' 
+        ' CheckBox1
+        ' 
+        CheckBox1.AutoSize = True
+        CheckBox1.Location = New Point(249, 340)
+        CheckBox1.Name = "CheckBox1"
+        CheckBox1.Size = New Size(132, 24)
+        CheckBox1.TabIndex = 13
+        CheckBox1.Text = "Show Password"
+        CheckBox1.UseVisualStyleBackColor = True
+        ' 
+        ' TextBoxCID
+        ' 
+        TextBoxCID.Font = New Font("Segoe UI Light", 9F, FontStyle.Regular, GraphicsUnit.Point)
+        TextBoxCID.Location = New Point(112, 155)
+        TextBoxCID.Multiline = True
+        TextBoxCID.Name = "TextBoxCID"
+        TextBoxCID.PasswordChar = "*"c
+        TextBoxCID.PlaceholderText = "Citizenship ID"
+        TextBoxCID.Size = New Size(265, 40)
+        TextBoxCID.TabIndex = 14
+        TextBoxCID.UseSystemPasswordChar = True
         ' 
         ' Signup
         ' 
@@ -119,6 +141,8 @@ Partial Class Signup
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(482, 648)
+        Controls.Add(TextBoxCID)
+        Controls.Add(CheckBox1)
         Controls.Add(TextBoxConfirmpassword)
         Controls.Add(TextBoxpassword)
         Controls.Add(TextBoxusername)
@@ -141,4 +165,6 @@ Partial Class Signup
     Friend WithEvents TextBoxusername As TextBox
     Friend WithEvents TextBoxpassword As TextBox
     Friend WithEvents TextBoxConfirmpassword As TextBox
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents TextBoxCID As TextBox
 End Class
