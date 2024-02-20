@@ -574,4 +574,9 @@ Public Class Product
         End Try
     End Sub
 
+    Private Sub btnhome_Click(sender As Object, e As EventArgs) Handles btnhome.Click
+        Dim Dashboard As New Dashboard()
+        Dashboard.Show()
+        Me.Hide()
+    End Sub
 End Class

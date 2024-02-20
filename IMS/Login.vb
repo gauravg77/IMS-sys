@@ -30,9 +30,12 @@ Public Class Login
 
             If count > 0 Then
 
-                'homeinterface ma navigate garnako lagi
-                Dim form3 As New Product()
-                form3.Show()
+                'Dim form3 As New Product()
+                'form3.Show()
+                'Me.Hide()
+
+                Dim Dashboard As New Dashboard()
+                Dashboard.Show()
                 Me.Hide()
             Else
                 MessageBox.Show("Invalid username or password")

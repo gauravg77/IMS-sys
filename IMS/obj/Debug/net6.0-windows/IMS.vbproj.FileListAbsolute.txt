@@ -153,4 +153,6 @@ C:\Users\pokha\Source\Repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\refin
 C:\Users\pokha\Source\Repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.pdb
 C:\Users\pokha\Source\Repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.genruntimeconfig.cache
 C:\Users\pokha\Source\Repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\ref\IMS.dll
-C:\Users\pokha\Source\Repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.Form1.resources
+C:\Users\pokha\source\repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.billingandsales.resources
+C:\Users\pokha\source\repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.Dashboard.resources
+C:\Users\pokha\source\repos\gauravg77\IMS-sys\IMS\obj\Debug\net6.0-windows\IMS.Form5.resources

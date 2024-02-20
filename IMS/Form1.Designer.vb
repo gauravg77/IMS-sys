@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class billingandsales
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -25,31 +25,43 @@ Partial Class Form1
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
-        TextBox3 = New TextBox()
+        txtbill = New TextBox()
+        txtaddress = New TextBox()
+        txtinvoice = New TextBox()
         Label4 = New Label()
-        DateTimePicker1 = New DateTimePicker()
-        TextBox4 = New TextBox()
+        dtinvoice = New DateTimePicker()
+        txtinvoicefor = New TextBox()
         Label5 = New Label()
-        DataGridView1 = New DataGridView()
         GroupBox1 = New GroupBox()
-        TextBox5 = New TextBox()
+        Label11 = New Label()
+        txtproductname = New TextBox()
         Label6 = New Label()
         Label7 = New Label()
         Label8 = New Label()
         Label9 = New Label()
-        TextBox6 = New TextBox()
-        TextBox7 = New TextBox()
-        TextBox8 = New TextBox()
-        TextBox9 = New TextBox()
+        txtquantity = New TextBox()
+        txtsubtotal = New TextBox()
+        txttotal = New TextBox()
+        txtdiscount = New TextBox()
         Label10 = New Label()
         btnaddtolist = New Button()
         GroupBox3 = New GroupBox()
-        Label11 = New Label()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        txtunitprice = New TextBox()
+        Label12 = New Label()
+        Label13 = New Label()
+        txttaxrate = New TextBox()
+        Label15 = New Label()
+        txtgrandtotal = New TextBox()
+        Label16 = New Label()
+        txtothers = New TextBox()
+        gridbilling = New DataGridView()
+        billpanel = New Panel()
+        btnnewbill = New Button()
+        btnprint = New Button()
+        btnhome = New Button()
         GroupBox1.SuspendLayout()
         GroupBox3.SuspendLayout()
+        CType(gridbilling, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label1
@@ -79,26 +91,29 @@ Partial Class Form1
         Label3.TabIndex = 2
         Label3.Text = "Address"
         ' 
-        ' TextBox1
+        ' txtbill
         ' 
-        TextBox1.Location = New Point(178, 113)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(429, 27)
-        TextBox1.TabIndex = 3
+        txtbill.AccessibleName = "txtbill"
+        txtbill.Location = New Point(178, 113)
+        txtbill.Name = "txtbill"
+        txtbill.Size = New Size(429, 27)
+        txtbill.TabIndex = 3
         ' 
-        ' TextBox2
+        ' txtaddress
         ' 
-        TextBox2.Location = New Point(178, 146)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(429, 27)
-        TextBox2.TabIndex = 4
+        txtaddress.AccessibleName = "txtaddress"
+        txtaddress.Location = New Point(116, 47)
+        txtaddress.Name = "txtaddress"
+        txtaddress.Size = New Size(429, 27)
+        txtaddress.TabIndex = 4
         ' 
-        ' TextBox3
+        ' txtinvoice
         ' 
-        TextBox3.Location = New Point(789, 112)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(214, 27)
-        TextBox3.TabIndex = 5
+        txtinvoice.AccessibleName = "txtinvoice"
+        txtinvoice.Location = New Point(789, 112)
+        txtinvoice.Name = "txtinvoice"
+        txtinvoice.Size = New Size(214, 27)
+        txtinvoice.TabIndex = 5
         ' 
         ' Label4
         ' 
@@ -109,19 +124,21 @@ Partial Class Form1
         Label4.TabIndex = 6
         Label4.Text = "Invoice Date"
         ' 
-        ' DateTimePicker1
+        ' dtinvoice
         ' 
-        DateTimePicker1.Location = New Point(789, 146)
-        DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(214, 27)
-        DateTimePicker1.TabIndex = 8
+        dtinvoice.AccessibleName = "dtinvoice"
+        dtinvoice.Location = New Point(789, 146)
+        dtinvoice.Name = "dtinvoice"
+        dtinvoice.Size = New Size(214, 27)
+        dtinvoice.TabIndex = 8
         ' 
-        ' TextBox4
+        ' txtinvoicefor
         ' 
-        TextBox4.Location = New Point(178, 179)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(825, 27)
-        TextBox4.TabIndex = 10
+        txtinvoicefor.AccessibleName = "txtinvoicefor"
+        txtinvoicefor.Location = New Point(178, 179)
+        txtinvoicefor.Name = "txtinvoicefor"
+        txtinvoicefor.Size = New Size(825, 27)
+        txtinvoicefor.TabIndex = 10
         ' 
         ' Label5
         ' 
@@ -132,50 +149,51 @@ Partial Class Form1
         Label5.TabIndex = 9
         Label5.Text = "Qty"
         ' 
-        ' DataGridView1
-        ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(62, 467)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.RowTemplate.Height = 29
-        DataGridView1.Size = New Size(932, 188)
-        DataGridView1.TabIndex = 11
-        ' 
         ' GroupBox1
         ' 
         GroupBox1.Controls.Add(Label11)
+        GroupBox1.Controls.Add(txtaddress)
         GroupBox1.Location = New Point(62, 95)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(952, 142)
         GroupBox1.TabIndex = 12
         GroupBox1.TabStop = False
         ' 
-        ' TextBox5
+        ' Label11
         ' 
-        TextBox5.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        TextBox5.Location = New Point(71, 303)
-        TextBox5.Name = "TextBox5"
-        TextBox5.Size = New Size(362, 27)
-        TextBox5.TabIndex = 13
+        Label11.AutoSize = True
+        Label11.Location = New Point(9, 91)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(81, 20)
+        Label11.TabIndex = 26
+        Label11.Text = "Invoice For"
+        ' 
+        ' txtproductname
+        ' 
+        txtproductname.AccessibleName = "txtproductname"
+        txtproductname.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtproductname.Location = New Point(71, 303)
+        txtproductname.Name = "txtproductname"
+        txtproductname.Size = New Size(362, 27)
+        txtproductname.TabIndex = 13
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
         Label6.Location = New Point(71, 280)
         Label6.Name = "Label6"
-        Label6.Size = New Size(85, 20)
+        Label6.Size = New Size(104, 20)
         Label6.TabIndex = 14
-        Label6.Text = "Description"
+        Label6.Text = "Product Name"
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
         Label7.Location = New Point(653, 280)
         Label7.Name = "Label7"
-        Label7.Size = New Size(67, 20)
+        Label7.Size = New Size(93, 20)
         Label7.TabIndex = 15
-        Label7.Text = "Discount"
+        Label7.Text = "Discount (%)"
         ' 
         ' Label8
         ' 
@@ -195,37 +213,42 @@ Partial Class Form1
         Label9.TabIndex = 17
         Label9.Text = "Qty"
         ' 
-        ' TextBox6
+        ' txtquantity
         ' 
-        TextBox6.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        TextBox6.Location = New Point(439, 303)
-        TextBox6.Name = "TextBox6"
-        TextBox6.Size = New Size(81, 27)
-        TextBox6.TabIndex = 18
+        txtquantity.AccessibleName = "txtquantity"
+        txtquantity.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtquantity.Location = New Point(439, 303)
+        txtquantity.Name = "txtquantity"
+        txtquantity.Size = New Size(81, 27)
+        txtquantity.TabIndex = 18
         ' 
-        ' TextBox7
+        ' txtsubtotal
         ' 
-        TextBox7.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        TextBox7.Location = New Point(526, 303)
-        TextBox7.Name = "TextBox7"
-        TextBox7.Size = New Size(121, 27)
-        TextBox7.TabIndex = 19
+        txtsubtotal.AccessibleName = "txtsubtotal"
+        txtsubtotal.BackColor = SystemColors.Control
+        txtsubtotal.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtsubtotal.Location = New Point(742, 628)
+        txtsubtotal.Name = "txtsubtotal"
+        txtsubtotal.Size = New Size(272, 27)
+        txtsubtotal.TabIndex = 19
         ' 
-        ' TextBox8
+        ' txttotal
         ' 
-        TextBox8.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        TextBox8.Location = New Point(780, 303)
-        TextBox8.Name = "TextBox8"
-        TextBox8.Size = New Size(121, 27)
-        TextBox8.TabIndex = 20
+        txttotal.AccessibleName = "txttotal"
+        txttotal.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txttotal.Location = New Point(718, 41)
+        txttotal.Name = "txttotal"
+        txttotal.Size = New Size(121, 27)
+        txttotal.TabIndex = 20
         ' 
-        ' TextBox9
+        ' txtdiscount
         ' 
-        TextBox9.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
-        TextBox9.Location = New Point(653, 303)
-        TextBox9.Name = "TextBox9"
-        TextBox9.Size = New Size(121, 27)
-        TextBox9.TabIndex = 21
+        txtdiscount.AccessibleName = "txtdiscount"
+        txtdiscount.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtdiscount.Location = New Point(653, 303)
+        txtdiscount.Name = "txtdiscount"
+        txtdiscount.Size = New Size(121, 27)
+        txtdiscount.TabIndex = 21
         ' 
         ' Label10
         ' 
@@ -249,57 +272,188 @@ Partial Class Form1
         ' 
         ' GroupBox3
         ' 
+        GroupBox3.Controls.Add(txtunitprice)
         GroupBox3.Controls.Add(btnaddtolist)
+        GroupBox3.Controls.Add(txttotal)
         GroupBox3.Location = New Point(62, 264)
         GroupBox3.Name = "GroupBox3"
         GroupBox3.Size = New Size(952, 104)
         GroupBox3.TabIndex = 25
         GroupBox3.TabStop = False
         ' 
-        ' Label11
+        ' txtunitprice
         ' 
-        Label11.AutoSize = True
-        Label11.Location = New Point(9, 91)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(81, 20)
-        Label11.TabIndex = 26
-        Label11.Text = "Invoice For"
+        txtunitprice.AccessibleName = "txtunitprice"
+        txtunitprice.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtunitprice.Location = New Point(464, 39)
+        txtunitprice.Name = "txtunitprice"
+        txtunitprice.Size = New Size(121, 27)
+        txtunitprice.TabIndex = 24
         ' 
-        ' Form1
+        ' Label12
+        ' 
+        Label12.AutoSize = True
+        Label12.Location = New Point(646, 635)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(71, 20)
+        Label12.TabIndex = 27
+        Label12.Text = "Sub Total"
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Location = New Point(646, 668)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(90, 20)
+        Label13.TabIndex = 29
+        Label13.Text = "Tax Rate (%)"
+        ' 
+        ' txttaxrate
+        ' 
+        txttaxrate.AccessibleName = "txttaxrate"
+        txttaxrate.BackColor = SystemColors.Control
+        txttaxrate.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txttaxrate.Location = New Point(742, 661)
+        txttaxrate.Name = "txttaxrate"
+        txttaxrate.Size = New Size(272, 27)
+        txttaxrate.TabIndex = 28
+        ' 
+        ' Label15
+        ' 
+        Label15.AutoSize = True
+        Label15.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        Label15.Location = New Point(653, 734)
+        Label15.Name = "Label15"
+        Label15.Size = New Size(54, 20)
+        Label15.TabIndex = 33
+        Label15.Text = "TOTAL"
+        ' 
+        ' txtgrandtotal
+        ' 
+        txtgrandtotal.AccessibleName = "txtgrandtotal"
+        txtgrandtotal.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtgrandtotal.Location = New Point(742, 727)
+        txtgrandtotal.Name = "txtgrandtotal"
+        txtgrandtotal.Size = New Size(272, 27)
+        txtgrandtotal.TabIndex = 32
+        ' 
+        ' Label16
+        ' 
+        Label16.AutoSize = True
+        Label16.Location = New Point(646, 701)
+        Label16.Name = "Label16"
+        Label16.Size = New Size(52, 20)
+        Label16.TabIndex = 35
+        Label16.Text = "Others"
+        ' 
+        ' txtothers
+        ' 
+        txtothers.AccessibleName = "txtothers"
+        txtothers.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        txtothers.Location = New Point(742, 694)
+        txtothers.Name = "txtothers"
+        txtothers.Size = New Size(272, 27)
+        txtothers.TabIndex = 34
+        ' 
+        ' gridbilling
+        ' 
+        gridbilling.AccessibleName = "gridbilling"
+        gridbilling.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        gridbilling.Location = New Point(62, 374)
+        gridbilling.Name = "gridbilling"
+        gridbilling.RowHeadersWidth = 51
+        gridbilling.RowTemplate.Height = 29
+        gridbilling.Size = New Size(952, 188)
+        gridbilling.TabIndex = 36
+        ' 
+        ' billpanel
+        ' 
+        billpanel.AccessibleName = "billpanel"
+        billpanel.BackColor = SystemColors.AppWorkspace
+        billpanel.Location = New Point(1217, 95)
+        billpanel.Name = "billpanel"
+        billpanel.Size = New Size(413, 593)
+        billpanel.TabIndex = 37
+        ' 
+        ' btnnewbill
+        ' 
+        btnnewbill.AccessibleName = "btnnewbill"
+        btnnewbill.Location = New Point(696, 846)
+        btnnewbill.Name = "btnnewbill"
+        btnnewbill.Size = New Size(145, 56)
+        btnnewbill.TabIndex = 38
+        btnnewbill.Text = "New Bill"
+        btnnewbill.UseVisualStyleBackColor = True
+        ' 
+        ' btnprint
+        ' 
+        btnprint.AccessibleName = "btnprint"
+        btnprint.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point)
+        btnprint.Location = New Point(869, 846)
+        btnprint.Name = "btnprint"
+        btnprint.Size = New Size(145, 56)
+        btnprint.TabIndex = 39
+        btnprint.Text = "Print"
+        btnprint.UseVisualStyleBackColor = True
+        ' 
+        ' btnhome
+        ' 
+        btnhome.AccessibleName = "btnhome"
+        btnhome.Location = New Point(39, 26)
+        btnhome.Name = "btnhome"
+        btnhome.Size = New Size(94, 29)
+        btnhome.TabIndex = 40
+        btnhome.Text = "home"
+        btnhome.UseVisualStyleBackColor = True
+        ' 
+        ' billingandsales
         ' 
         AccessibleName = "Billing and Sales"
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = SystemColors.Control
         ClientSize = New Size(1766, 1003)
+        Controls.Add(btnhome)
+        Controls.Add(btnprint)
+        Controls.Add(btnnewbill)
+        Controls.Add(billpanel)
+        Controls.Add(gridbilling)
+        Controls.Add(Label16)
+        Controls.Add(txtothers)
+        Controls.Add(Label15)
+        Controls.Add(txtgrandtotal)
+        Controls.Add(Label13)
+        Controls.Add(txttaxrate)
+        Controls.Add(Label12)
         Controls.Add(Label10)
-        Controls.Add(TextBox9)
-        Controls.Add(TextBox8)
-        Controls.Add(TextBox7)
-        Controls.Add(TextBox6)
+        Controls.Add(txtdiscount)
+        Controls.Add(txtsubtotal)
+        Controls.Add(txtquantity)
         Controls.Add(Label9)
         Controls.Add(Label8)
         Controls.Add(Label7)
         Controls.Add(Label6)
-        Controls.Add(TextBox5)
-        Controls.Add(DataGridView1)
-        Controls.Add(TextBox4)
+        Controls.Add(txtproductname)
+        Controls.Add(txtinvoicefor)
         Controls.Add(Label5)
-        Controls.Add(DateTimePicker1)
+        Controls.Add(dtinvoice)
         Controls.Add(Label4)
-        Controls.Add(TextBox3)
-        Controls.Add(TextBox2)
-        Controls.Add(TextBox1)
+        Controls.Add(txtinvoice)
+        Controls.Add(txtbill)
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
         Controls.Add(GroupBox1)
         Controls.Add(GroupBox3)
-        Name = "Form1"
+        Name = "billingandsales"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Billing and Sales"
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        WindowState = FormWindowState.Maximized
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         GroupBox3.ResumeLayout(False)
+        GroupBox3.PerformLayout()
+        CType(gridbilling, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -307,26 +461,38 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtbill As TextBox
+    Friend WithEvents txtaddress As TextBox
+    Friend WithEvents txtinvoice As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents dtinvoice As DateTimePicker
+    Friend WithEvents txtinvoicefor As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txtproductname As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents txtquantity As TextBox
+    Friend WithEvents txtsubtotal As TextBox
+    Friend WithEvents txttotal As TextBox
+    Friend WithEvents txtdiscount As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents btnaddtolist As Button
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents txtunitprice As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents txttaxrate As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents txtgrandtotal As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txtothers As TextBox
+    Friend WithEvents gridbilling As DataGridView
+    Friend WithEvents billpanel As Panel
+    Friend WithEvents btnnewbill As Button
+    Friend WithEvents btnprint As Button
+    Friend WithEvents btnhome As Button
 End Class

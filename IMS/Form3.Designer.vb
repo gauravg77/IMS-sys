@@ -56,6 +56,7 @@ Partial Class Product
         SqlCommand1 = New Microsoft.Data.SqlClient.SqlCommand()
         GroupBox1 = New GroupBox()
         GroupBox2 = New GroupBox()
+        btnhome = New Button()
         CType(gridproduct, ComponentModel.ISupportInitialize).BeginInit()
         CType(gridcategory, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -334,6 +335,7 @@ Partial Class Product
         ' gridproduct
         ' 
         gridproduct.AccessibleName = "gridproduct"
+        gridproduct.BackgroundColor = SystemColors.Control
         gridproduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         gridproduct.Location = New Point(810, 438)
         gridproduct.Name = "gridproduct"
@@ -345,6 +347,7 @@ Partial Class Product
         ' gridcategory
         ' 
         gridcategory.AccessibleName = "gridcategory"
+        gridcategory.BackgroundColor = SystemColors.ButtonHighlight
         gridcategory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         gridcategory.Location = New Point(27, 438)
         gridcategory.Name = "gridcategory"
@@ -396,6 +399,16 @@ Partial Class Product
         GroupBox2.TabStop = False
         GroupBox2.Text = "PRODUCT MANAGEMENT"
         ' 
+        ' btnhome
+        ' 
+        btnhome.AccessibleName = "btnhome"
+        btnhome.Location = New Point(27, 12)
+        btnhome.Name = "btnhome"
+        btnhome.Size = New Size(94, 29)
+        btnhome.TabIndex = 35
+        btnhome.Text = "Home"
+        btnhome.UseVisualStyleBackColor = True
+        ' 
         ' Product
         ' 
         AccessibleName = "Product "
@@ -403,6 +416,7 @@ Partial Class Product
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         ClientSize = New Size(1766, 1003)
+        Controls.Add(btnhome)
         Controls.Add(btnrefreshcategory)
         Controls.Add(btnrefreshproduct)
         Controls.Add(gridcategory)
@@ -479,4 +493,5 @@ Partial Class Product
     Friend WithEvents SqlCommand1 As Microsoft.Data.SqlClient.SqlCommand
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents btnhome As Button
 End Class
